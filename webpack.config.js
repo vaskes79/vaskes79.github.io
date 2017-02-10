@@ -3,9 +3,17 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const autoprefixer = require('autoprefixer');
 const postcssNested = require('postcss-nested');
 const postcssCustomProperties = require('postcss-custom-properties');
+const optimizeCss = require('cssnano');
+const postcssPlugins =  [
+  postcssNested,
+  postcssCustomProperties,
+  autoprefixer
+]
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const path = require('path');
 
@@ -73,11 +81,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function() {
-          return [
-            postcssNested,
-            postcssCustomProperties,
-            autoprefixer
-         ]
+          return postcssPlugins;
         }
       }
     }),
@@ -106,6 +110,9 @@ module.exports = {
 };
 
 if (NODE_ENV == 'production') {
+
+  postcssPlugins.push(optimizeCss);
+
   module.exports.plugins.push(
       new webpack.optimize.UglifyJsPlugin({
         compress: {
