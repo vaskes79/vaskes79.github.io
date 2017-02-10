@@ -1,3 +1,133 @@
-h1 {
-    color: green;
+ .Card { }body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #c8d7d4;
+    color: #b4bfbf;
+    width: 100%;
 }
+
+.HomePage {
+}@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Thin'), local('Roboto-Thin'), url(//assets/Robotothin.woff2) format('woff2'), url(//assets/Robotothin.woff) format('woff'), url(//assets/Robotothin.ttf) format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(//assets/Robotothinitalic.woff2) format('woff2'), url(//assets/Robotothinitalic.woff) format('woff'), url(//assets/Robotothinitalic.ttf) format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Light'), local('Roboto-Light'), url(//assets/Robotolight.woff2) format('woff2'), url(//assets/Robotolight.woff) format('woff'), url(//assets/Robotolight.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(//assets/Robotolightitalic.woff2) format('woff2'), url(//assets/Robotolightitalic.woff) format('woff'), url(//assets/Robotolightitalic.ttf) format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto-Regular'), url(//assets/Roboto.woff2) format('woff2'), url(//assets/Roboto.woff) format('woff'), url(//assets/Roboto.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Italic'), local('Roboto-Italic'), url(//assets/Robotoitalic.woff2) format('woff2'), url(//assets/Robotoitalic.woff) format('woff'), url(//assets/Robotoitalic.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(//assets/Robotomedium.woff2) format('woff2'), url(//assets/Robotomedium.woff) format('woff'), url(//assets/Robotomedium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(//assets/Robotomediumitalic.woff2) format('woff2'), url(//assets/Robotomediumitalic.woff) format('woff'), url(//assets/Robotomediumitalic.ttf) format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(//assets/Robotobold.woff2) format('woff2'), url(//assets/Robotobold.woff) format('woff'), url(//assets/Robotobold.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(//assets/Robotobolditalic.woff2) format('woff2'), url(//assets/Robotobolditalic.woff) format('woff'), url(//assets/Robotobolditalic.ttf) format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Black'), local('Roboto-Black'), url(//assets/Robotoblack.woff2) format('woff2'), url(//assets/Robotoblack.woff) format('woff'), url(//assets/Robotoblack.ttf) format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(//assets/Robotoblackitalic.woff2) format('woff2'), url(//assets/Robotoblackitalic.woff) format('woff'), url(//assets/Robotoblackitalic.ttf) format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//assets/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(//assets/MaterialIcons-Regular.woff2) format('woff2'),
+       url(//assets/MaterialIcons-Regular.woff) format('woff'),
+       url(//assets/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3)
+}
+
