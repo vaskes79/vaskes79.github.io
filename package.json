@@ -1,0 +1,15 @@
+{
+  "name": "vaskes79",
+  "version": "0.0.1",
+  "description": "site portfolio a web developer Vasily Guzov",
+  "main": "index.js",
+  "repository": "git@github.com:vaskes79/vaskes79.github.io.git",
+  "author": "Vasily Guzov",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages -b master -d build"
+  }
+}
