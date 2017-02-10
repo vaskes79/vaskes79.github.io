@@ -4,6 +4,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const postcssNested = require('postcss-nested');
+const postcssCustomProperties = require('postcss-custom-properties');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const path = require('path');
 
@@ -58,6 +60,10 @@ module.exports = {
           fallback: 'style', 
           use: 'css!postcss?browsers=last 2 versions!sass-loader?resolve url'
         })
+      },
+      {
+        test: /\.(png|jpe?g|JPG|svg|ttf|eot|woff|woff2)$/,
+        loader: 'file?name=assets/[name].[ext]'
       }
     ]
   },
@@ -67,7 +73,11 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function() {
-          return [autoprefixer]
+          return [
+            postcssNested,
+            postcssCustomProperties,
+            autoprefixer
+         ]
         }
       }
     }),
@@ -77,7 +87,8 @@ module.exports = {
       disable: NODE_ENV === 'development'
     }),
     new HtmlWebpackPlugin({
-      title: 'dev static build'
+      title: 'dev static build',
+      favicon: 'favicon.ico'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({

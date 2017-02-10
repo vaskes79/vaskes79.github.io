@@ -1,3 +1,18 @@
-h1 {
-    color: red;
+:root{
+    --c-BG: #c8d7d4;
+    --c-H: #000000;
+    --c-P: #b4bfbf;
+    --c-Page: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--c-BG);
+    color: var(--c-P);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.HomePage {
 }

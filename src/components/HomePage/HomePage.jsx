@@ -1,3 +1,4 @@
+import Card from '../Card'
 import './HomePage.css'
 
 class HomePage extends React.Component {
@@ -5,9 +6,15 @@ class HomePage extends React.Component {
       super();
   }
 
+  componentWillMount() {
+    document.title = 'Vasily Guzov'
+  }
+
   render () {
     return (
-      <h1>HomePage</h1>
+      <section className="HomePage">
+        <Card />
+      </section>
     );
   }
 }
