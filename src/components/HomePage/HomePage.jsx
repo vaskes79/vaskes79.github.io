@@ -1,5 +1,5 @@
-import Card from '../Card'
 import './HomePage.css'
+import Card from '../Card'
 
 class HomePage extends React.Component {
   constructor(props) {

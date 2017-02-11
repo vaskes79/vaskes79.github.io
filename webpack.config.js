@@ -10,7 +10,7 @@ const postcssCustomProperties = require('postcss-custom-properties');
 const optimizeCss = require('cssnano');
 const postcssPlugins =  [
   postcssNested,
-  postcssCustomProperties,
+  // postcssCustomProperties,
   autoprefixer
 ]
 
@@ -31,7 +31,7 @@ module.exports = {
     library: '[name]'
   },
 
-  watch: NODE_ENV == 'development',
+  watch: NODE_ENV === 'development',
   devtool: NODE_ENV === 'development' ? "cheap-inline-module-source-map" : false,
   watchOptions: {
     aggregateTimeout: 100

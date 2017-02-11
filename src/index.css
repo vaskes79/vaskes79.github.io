@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root{
+    --c-BG: #c8d7d4;
+    --c-H: #000000;
+    --c-P: #b4bfbf;
+    --c-Page: #ffffff;
+    --f-Base: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
