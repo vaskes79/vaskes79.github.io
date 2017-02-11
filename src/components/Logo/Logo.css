@@ -1,0 +1,15 @@
+ .Logo {
+     margin: 150px auto;
+     width: 50vw;
+     height: 50vh;
+     display: block;
+     background: darkslategray;
+
+ }
+
+.oct1, .oct2 {
+    width: 160px;
+    height: 160px;
+    fill: none;
+    stroke: #fff;
+ }

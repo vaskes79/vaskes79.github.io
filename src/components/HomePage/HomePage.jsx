@@ -1,5 +1,6 @@
 import './HomePage.css'
 import Card from '../Card'
+import Logo from '../Logo'
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class HomePage extends React.Component {
   render () {
     return (
       <section className="HomePage">
-        <Card />
+        <Logo />
       </section>
     );
   }

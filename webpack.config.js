@@ -70,8 +70,13 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpe?g|JPG|svg|ttf|eot|woff|woff2)$/,
+        test: /\.(png|jpe?g|JPG|ttf|eot|woff|woff2)$/,
         loader: 'file?name=assets/[name].[ext]'
+      },
+      {
+        test: /\.svg$/,
+        exclude: /(node_modules)/,
+        loaders: ['react-svg-inline-loader']
       }
     ]
   },

@@ -2,17 +2,21 @@ import React  from 'react';
 import './Card.css';
 import vasily from './vasily-guzov.jpg'
 
-import vk from './icons/SVG/vk.svg'
-import fb from './icons/SVG/facebook.svg'
-import github from './icons/SVG/github.svg'
-import tw from './icons/SVG/twitter.svg'
+import Vk from './SVG/vk.svg'
+import Fb from './SVG/facebook.svg'
+import Github from './SVG/github.svg'
+import Tw from './SVG/twitter.svg'
+import Plus from './SVG/add.svg'
 
 const Card = (props) => {
     let {} = props;
     return (
         <section className="Card">
             <div className="Card__wrap">
-                <i className="Card__btn material-icons">add</i>
+                 
+                <Plus className="Card__btn"/>
+
+
                 <div className="Card__photo">
                     <img src={vasily} alt="Vasily guzov" className="Card__img"/>
                 </div>
@@ -28,22 +32,22 @@ const Card = (props) => {
                     <ul className="Card__socIcons">
                         <li className="Card__socIconsWrap">
                             <a href="#" className="Card__socIconsLink">
-                                <img src={fb} className="Card__socIcon Card__socIcon--fb"></img >
+                            <Fb />
                             </a>
                         </li>
                         <li className="Card__socIconsWrap">
                             <a href="#" className="Card__socIconsLink">
-                                <img src={tw} className="Card__socIcon Card__socIcon--twitter"></img>
+                            <Tw />
                             </a>
                         </li>
                         <li className="Card__socIconsWrap">
                             <a href="#" className="Card__socIconsLink">
-                                <img src={github} className="Card__socIcon Card__socIcon--github"></img>
+                                <Github />
                             </a>
                         </li>
                         <li className="Card__socIconsWrap">
                             <a href="#" className="Card__socIconsLink">
-                                <img src={vk} className="Card__socIcon Card__socIcon--vk"></img >
+                                <Vk />
                             </a>
                         </li>
                     </ul>
