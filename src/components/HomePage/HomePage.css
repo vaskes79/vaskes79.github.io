@@ -1,11 +1,33 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: var(--f-Base);
-    background-color: var(--c-BG);
-    color: var(--c-P);
+    background-color: var(--c-Bg);
+    color: var(--c-Font);
     width: 100%;
+    height: 100%;
+    
+    width: 100vw;
+    height: 100vh;
     padding: 0;
     margin: 0;
 }
 
 .HomePage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--c-BgFooter);
+    overflow: hidden;
+}
+
+.logo--devWrap {
+    display: block;
+    margin: 10vh auto;
+    width: 35vw;
+    height: 80%;
+
 }

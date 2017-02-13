@@ -1,15 +1,44 @@
- .Logo {
-     margin: 150px auto;
-     width: 50vw;
-     height: 50vh;
-     display: block;
-     background: darkslategray;
-
+ :root {
+     --c-Logo: #fff;
  }
+ 
+ .Logo {
+     display: block;
+     position: relative;
+     margin: auto;
+     width: 100%;
+     height: 100%;
 
-.oct1, .oct2 {
-    width: 160px;
-    height: 160px;
-    fill: none;
-    stroke: #fff;
+     &__svg {
+         width: 100%;
+         height: 100%;
+     }
+     
+     &__Vas {
+         fill: var(--c-Logo);
+     }
+
+     &__VG {
+         fill: var(--c-Logo);
+     }
+
+     &__webDev {
+         fill: var(--c-Logo);
+     }
+
+     &__hexagon {
+        fill: none;
+        stroke: var(--c-Logo);
+        transform: matrix(0.1236,0,0,0.12353,104.10919,28.74235);
+        &--shape1 {
+
+        }
+        &--shape2 {
+            transform: matrix(0,1,-1,0,242.41,609.63);
+        }
+
+     }
+
+
+
  }

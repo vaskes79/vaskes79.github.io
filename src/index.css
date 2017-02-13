@@ -2,9 +2,17 @@
 /*@import url('https://fonts.googleapis.com/icon?family=Material+Icons');*/
 
 :root{
-    --c-BG: #c8d7d4;
-    --c-H: #000000;
-    --c-P: #b4bfbf;
-    --c-Page: #ffffff;
-    --f-Base: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --c-Bg:                #c8d7d4;
+    --c-Page:              #eeeeee;
+    --c-BtnRound:          #828282;
+    --c-LinkVisited:       #a9cdcd;
+    --c-Accent:            #afa376;
+    --c-BgDropDown:        #879999;
+    --c-Font:              var(--c-BgDropDown);
+    --c-LinkFooter:        #435555;
+    --c-LinkVisitedFooter: #464d4b;
+    --c-BgFooter:          #27282d;
+
+    --f-Base:              'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

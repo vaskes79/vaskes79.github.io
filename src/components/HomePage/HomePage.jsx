@@ -14,7 +14,9 @@ class HomePage extends React.Component {
   render () {
     return (
       <section className="HomePage">
-        <Logo />
+        <div className="logo--devWrap">
+          <Logo />
+        </div>
       </section>
     );
   }
