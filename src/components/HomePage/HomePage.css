@@ -18,12 +18,28 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-}
-
-.wrap {
-    position: relative;
-    height: 100vh;
-    z-index: 3;
+    display: flex;
+    &__header {
+        padding-top: 15vh;
+        text-align: center;
+    }
+    &__wrap {
+        margin: auto;
+        position: relative;
+        width: 90vw;
+        height: 90vh;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid red;   */
+    }
+    &__logoWrap {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .bg {
@@ -60,13 +76,6 @@ body {
     }
 }
 
-.logo--devWrap {
-    display: block;
-    margin: 10vh auto;
-    width: 35vw;
-    height: 80%;
-
-}
 
 /* animation  */
 @keyframes startBg {
