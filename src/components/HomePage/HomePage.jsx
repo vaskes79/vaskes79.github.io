@@ -1,5 +1,5 @@
 import './HomePage.css'
-import Card from '../Card'
+import Bg from '../Bg';
 import Logo from '../Logo'
 import Content from '../Content';
 import Footer from '../Footer';
@@ -28,7 +28,7 @@ class HomePage extends React.Component {
         </header>
         <Footer />
       </div>
-      <div className="bg"></div>
+      <Bg />
       </section>
     );
   }
