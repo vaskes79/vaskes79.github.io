@@ -24,9 +24,12 @@ body {
         text-align: center;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
+        transition: all .75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
     }
     &__wrap {
+        opacity: 1;
         margin: auto;
         position: relative;
         width: 95vw;
@@ -36,6 +39,8 @@ body {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        transform: scale(1);
+        transition: all .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
         /* border: 1px solid red;   */
     }
     &__logoWrap {
@@ -45,3 +50,20 @@ body {
     }
 }
 
+/* animation classes  */
+/* the sequence animation
+Bg
+HomePage__wrap
+Footer
+HomePage__header
+Content  */
+
+.loading .HomePage__header {
+    transform: translateY(100px); 
+}
+
+
+.loading .HomePage__wrap {
+    transform: scale(.5);
+    opacity: 0;
+}

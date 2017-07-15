@@ -17,7 +17,7 @@ class HomePage extends React.Component {
 
   render () {
     return (
-      <section className="HomePage">
+      <section className="HomePage loading">
       <div className="HomePage__wrap">
         <header className="HomePage__header">
           <div className="HomePage__logoWrap">
