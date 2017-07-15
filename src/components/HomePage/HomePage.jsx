@@ -6,6 +6,7 @@ import Logo from '../Logo'
 import Content from '../Content';
 import Footer from '../Footer';
 import Nav from '../Nav';
+import Article from '../Article';
 
 
 class HomePage extends Component {
@@ -28,7 +29,7 @@ class HomePage extends Component {
   }
 
   render () {
-    let {name, description, navLinks} = this.state.data;
+    let {name, description, navLinks, articles} = this.state.data;
     return (
       <section className={`HomePage ${this.state.loading ? 'loading': ''}`}>
       <div className="HomePage__wrap">
@@ -37,8 +38,11 @@ class HomePage extends Component {
             <Logo /> 
           </div>
           <Content name={name} description={description}/>
+
           <Nav navLinks={navLinks} />
         </header>
+
+        <Article data={articles[0]} />
         <Footer />
       </div>
       <Bg />
