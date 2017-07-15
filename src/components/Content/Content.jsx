@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import './Content.css';
 
-function Content () {
+function Content (props) {
+    let {name, description} = props;
     return (
         <section className="Content">
             <div className="Content__wrap">
-                <h1 className="Content__header">Vasily Guzov</h1>
-                <p className="Content__description">
-                    Hello my name is Vasily Guzov I'm 35 years old. I'm frontend developer. I have been developing since 2010 and I'm very like this activity.
-                </p>
+                <h1 className="Content__header">{name}</h1>
+                <p className="Content__description">{description}</p>
             </div>
         </section>
     );
 }
+
+Content.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+};
 
 export default Content;

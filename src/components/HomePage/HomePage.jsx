@@ -1,3 +1,5 @@
+import React,{Component, PropTypes} from 'react';
+
 import './HomePage.css'
 import Bg from '../Bg';
 import Logo from '../Logo'
@@ -6,11 +8,13 @@ import Footer from '../Footer';
 import Nav from '../Nav';
 
 
-class HomePage extends React.Component {
+class HomePage extends Component {
   constructor(props) {
-      super();
+      super(props);
+    console.log(this.props.data)
       this.state = {
-        loading: true
+        loading: true,
+        data: this.props.data
       };
   }
 
@@ -25,6 +29,7 @@ class HomePage extends React.Component {
   }
 
   render () {
+    let {name, description} = this.state.data;
     return (
       <section className={`HomePage ${this.state.loading ? 'loading': ''}`}>
       <div className="HomePage__wrap">
@@ -32,7 +37,7 @@ class HomePage extends React.Component {
           <div className="HomePage__logoWrap">
             <Logo /> 
           </div>
-          <Content />
+          <Content name={name} description={description}/>
           <Nav />
         </header>
         <Footer />
@@ -42,5 +47,9 @@ class HomePage extends React.Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  data: PropTypes.object,
+};
 
 export default HomePage;
