@@ -9,15 +9,24 @@ import Nav from '../Nav';
 class HomePage extends React.Component {
   constructor(props) {
       super();
+      this.state = {
+        loading: true
+      };
   }
 
   componentWillMount() {
     document.title = 'Vasily Guzov'
+    setTimeout( () => {
+        this.setState({
+          loading: false
+        })
+      }, 1000
+    )
   }
 
   render () {
     return (
-      <section className="HomePage loading">
+      <section className={`HomePage ${this.state.loading ? 'loading': ''}`}>
       <div className="HomePage__wrap">
         <header className="HomePage__header">
           <div className="HomePage__logoWrap">

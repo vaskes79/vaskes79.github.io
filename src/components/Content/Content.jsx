@@ -6,7 +6,9 @@ function Content () {
         <section className="Content">
             <div className="Content__wrap">
                 <h1 className="Content__header">Vasily Guzov</h1>
-                <p className="Content__description">a fully responsive site template designed by html5 up and released for free under the creative commons license.</p>
+                <p className="Content__description">
+                    Hello my name is Vasily Guzov I'm 35 years old. I'm frontend developer. I have been developing since 2010 and I'm very like this activity.
+                </p>
             </div>
         </section>
     );
