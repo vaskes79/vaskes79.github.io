@@ -11,7 +11,6 @@ import Nav from '../Nav';
 class HomePage extends Component {
   constructor(props) {
       super(props);
-    console.log(this.props.data)
       this.state = {
         loading: true,
         data: this.props.data
@@ -29,7 +28,7 @@ class HomePage extends Component {
   }
 
   render () {
-    let {name, description} = this.state.data;
+    let {name, description, navLinks} = this.state.data;
     return (
       <section className={`HomePage ${this.state.loading ? 'loading': ''}`}>
       <div className="HomePage__wrap">
@@ -38,7 +37,7 @@ class HomePage extends Component {
             <Logo /> 
           </div>
           <Content name={name} description={description}/>
-          <Nav />
+          <Nav navLinks={navLinks} />
         </header>
         <Footer />
       </div>

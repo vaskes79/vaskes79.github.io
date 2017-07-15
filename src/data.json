@@ -1,4 +1,10 @@
 {
     "name": "Vasily Guzov",
-    "description": "Hello my name is Vasily Guzov I'm 35 years old. I'm frontend developer. I have been developing since 2010 and I'm very like this activity."
+    "description": "Hello my name is Vasily Guzov I'm 35 years old. I'm frontend developer. I have been developing since 2010 and I'm very like this activity.",
+    "navLinks": [
+        {"name": "intro", "id": "#intro", "status": false},
+        {"name": "works", "id": "#works", "status": false},
+        {"name": "about", "id": "#about", "status": false},
+        {"name": "contact", "id": "#contact", "status": false}
+    ]
 }
