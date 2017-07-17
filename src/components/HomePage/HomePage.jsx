@@ -1,4 +1,5 @@
 import React,{Component, PropTypes} from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './HomePage.css'
 import Bg from '../Bg';
@@ -54,16 +55,30 @@ class HomePage extends Component {
     return (
       <section className={`HomePage ${this.state.loading ? 'loading': ''}`}>
       <div className="HomePage__wrap">
-        <header className="HomePage__header">
-          <div className="HomePage__logoWrap">
-            <Logo /> 
-          </div>
-          <Content name={name} description={description}/>
+        <ReactCSSTransitionGroup
+          transitionName='HomePage__animation'
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+            { this.state.openArticle ? '' :
+              <header className="HomePage__header">
+                <div className="HomePage__logoWrap">
+                  <Logo /> 
+                </div>
+                <Content name={name} description={description}/>
 
-          <Nav navLinks={navLinks} switchHandler={this.articleHanler}/>
-        </header>
+                <Nav navLinks={navLinks} switchHandler={this.articleHanler}/>
+              </header>
+            }
+        </ReactCSSTransitionGroup>
 
-        {this.state.openArticle ? <Article data={this.state.activeArticle} btnCloseHandler={this.articleHanler} /> : ''}
+        <ReactCSSTransitionGroup
+          transitionName='Article__animation'
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          {this.state.openArticle ? <Article data={this.state.activeArticle} btnCloseHandler={this.articleHanler} /> : ''}
+        </ReactCSSTransitionGroup>
         <Footer />
       </div>
       <Bg />
