@@ -19,6 +19,7 @@ class Nav extends Component {
             nav.status = false
             if(nav.id === event.target.id ) {
                 nav.status = true;
+                this.props.switchHandler(nav.id);
             }
             return nav;
         })

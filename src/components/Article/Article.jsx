@@ -7,9 +7,14 @@ function Article(props) {
         return {__html: content};
     }
 
+    function closeHandler (event) {
+        event.preventDefault();
+        props.btnCloseHandler();
+    }
+
     return (
         <article className="Article" id={id}>
-            <button className="Article__btn"></button>
+            <button className="Article__btn" onClick={closeHandler}></button>
             <h2 className="Article__title">{title}</h2>
             <div className="Article__img">
                  <img src={img.src} alt={img.name}/> 

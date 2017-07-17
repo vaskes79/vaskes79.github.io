@@ -14,8 +14,11 @@ class HomePage extends Component {
       super(props);
       this.state = {
         loading: true,
-        data: this.props.data
+        data: this.props.data,
+        openArticle: false,
+        activeArticle: null
       };
+      this.articleHanler = this.articleHanler.bind(this);
   }
 
   componentWillMount() {
@@ -26,6 +29,24 @@ class HomePage extends Component {
         })
       }, 1000
     )
+  }
+
+  articleHanler (articleID = null) {
+    console.log('work switch handler: ', articleID);
+
+    let activeArticle = this.state.data.articles.find( article => article.id === articleID )
+
+    if(activeArticle) {
+      this.setState({
+        activeArticle,
+        openArticle: true,
+      })
+    } else {
+      this.setState({
+        activeArticle: null,
+        openArticle: false
+      })
+    } 
   }
 
   render () {
@@ -39,10 +60,10 @@ class HomePage extends Component {
           </div>
           <Content name={name} description={description}/>
 
-          <Nav navLinks={navLinks} />
+          <Nav navLinks={navLinks} switchHandler={this.articleHanler}/>
         </header>
 
-        <Article data={articles[0]} />
+        {this.state.openArticle ? <Article data={this.state.activeArticle} btnCloseHandler={this.articleHanler} /> : ''}
         <Footer />
       </div>
       <Bg />

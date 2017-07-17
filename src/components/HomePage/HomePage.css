@@ -4,10 +4,12 @@ body {
     color: var(--c-Font);
     padding: 0;
     margin: 0;
-   background-color: rgba(19, 21, 25, 1); 
+    background-color: rgba(19, 21, 25, 1);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -19,38 +21,44 @@ body {
     height: 100vh;
     overflow: hidden;
     display: flex;
-    &__header {
-        padding-top: 15vh;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        transition: all .75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-    }
-    &__wrap {
-        opacity: 1;
-        margin: auto;
-        position: relative;
-        width: 95vw;
-        height: 95vh;
-        z-index: 3;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        transform: scale(1);
-        transition: all .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
-        /* border: 1px solid red;   */
-    }
-    &__logoWrap {
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-    }
 }
 
+.HomePage__header {
+    padding-top: 15vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+}
+
+.HomePage__wrap {
+    opacity: 1;
+    margin: auto;
+    position: relative;
+    width: 95vw;
+    height: 95vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform: scale(1);
+    transition: all .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+    /* border: 1px solid red;   */
+}
+
+.HomePage__logoWrap {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+
 /* animation classes  */
+
+
 /* the sequence animation
 Bg
 HomePage__wrap
@@ -59,9 +67,8 @@ HomePage__header
 Content  */
 
 .loading .HomePage__header {
-    transform: translateY(100px); 
+    transform: translateY(100px);
 }
-
 
 .loading .HomePage__wrap {
     transform: scale(.5);

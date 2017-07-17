@@ -3,44 +3,48 @@
     position: relative;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-    padding: 5vh 0; 
+    padding: 5vh 0;
     margin: 5vh 0;
     opacity: 1;
     height: 250px;
     transition: all .75s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-    &__wrap {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        border-left: 1px solid #fff;
-        width: 1px;
-        margin-left: -1px;
-        height: 5vh;
-        left: calc(100% / 2);
-    }
-    &:before {
-        top: -5vh;
-    }
-    &:after {
-        bottom: -5vh;
-    }
+}
 
-    &__header {
-        font-size: 3em;
-        padding: 0;
-        margin: 0;
-    }
+.Content__wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-    &__description {
-       text-transform: uppercase; 
-       max-width: 640px;
-    }
+.Content:before,
+.Content:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-left: 1px solid #fff;
+    width: 1px;
+    margin-left: -1px;
+    height: 5vh;
+    left: calc(100% / 2);
+}
+
+.Content:before {
+    top: -5vh;
+}
+
+.Content:after {
+    bottom: -5vh;
+}
+
+.Content__header {
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+}
+
+.Content__description {
+    text-transform: uppercase;
+    max-width: 640px;
 }
 
 .loading .Content {
