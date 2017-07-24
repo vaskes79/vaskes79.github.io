@@ -10,8 +10,9 @@ function Article(props) {
     let titleArticle = title ? <h2 className="Article__title" >{title}</h2> : '' ;
 
     switch (id) {
-        case '#contact': 
-            article = <div className="Article__content"><Form /></div>;
+        case '#contact':
+            titleArticle = null; 
+            article = <div className="Article__content"><Form name={ title ? title : null} /></div>;
             break;
         default:
             article = contentArticle; 
@@ -21,9 +22,9 @@ function Article(props) {
     return (
         <article className="Article" id={id}>
             <button className="Article__btn" onClick={closeHandler}></button>
-                { titleArticle }
-                { imgContent }
-                { article }
+            { titleArticle }
+            { imgContent }
+            { article }
         </article>
     )
 
