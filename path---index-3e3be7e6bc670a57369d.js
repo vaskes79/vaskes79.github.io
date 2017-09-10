@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{"./node_modules/json-loader/index.js!./.cache/json/index.json":function(e,n){e.exports={data:{site:{siteMetadata:{title:"Vasily Guzov",description:"web developer and frontend engineer"}}},pathContext:{}}}});
+//# sourceMappingURL=path---index-3e3be7e6bc670a57369d.js.map
