@@ -1,0 +1,19 @@
+.HeaderWithImg {
+  width: 100%;
+  height: 400px;
+  background-image: url('./img/men.jpg');
+  background-repeat: no-repeat;
+  background-size: auto 95%;
+  background-position: 15% bottom;
+  background-color: #080808;
+}
+
+.HeaderWithImg__title {
+  width: 940px;
+  text-align: right;
+  margin: 0 auto;
+  font-size: 2.25rem;
+  letter-spacing: 0.72px;
+  line-height: 400px;
+  text-transform: uppercase;
+}
