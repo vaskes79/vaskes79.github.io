@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './HeaderWithImg.css';
+import React from 'react'
+//import PropTypes from 'prop-types'
+import './HeaderWithImg.css'
 
-const HeaderWithImg = ({title, color, bgColor}) => {
+const HeaderWithImg = ({ title, color, bgColor }) => {
   return (
     <div
       className="HeaderWithImg"
@@ -12,15 +12,15 @@ const HeaderWithImg = ({title, color, bgColor}) => {
       }}>
       <h1 className="HeaderWithImg__title">{title}</h1>
     </div>
-  );
-};
+  )
+}
 
-HeaderWithImg.propTypes = {};
+HeaderWithImg.propTypes = {}
 
 HeaderWithImg.defaultProps = {
   color: '#ffffff',
   title: 'classic UI kit',
-  bgColor: '#080808',
-};
+  bgColor: '#020202',
+}
 
-export default HeaderWithImg;
+export default HeaderWithImg
