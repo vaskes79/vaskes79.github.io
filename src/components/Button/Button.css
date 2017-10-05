@@ -6,7 +6,10 @@
   font-family: "PT Sans";
   font-weight: 400;
   letter-spacing: 0.03rem;
+  background: none;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
 }
 
 .Button--big {
@@ -32,12 +35,24 @@
   background-color: rgb(226, 87, 76);
 }
 
+.Button--red:hover {
+  background-color: rgb(204, 77, 67);
+}
+
 .Button--green {
   box-shadow: 0 0.125rem 0 rgb(55, 161, 142);
   background-color: rgb(61, 179, 158);
 }
 
+.Button--green:hover {
+  background-color: rgb(52, 162, 143);
+}
+
 .Button--blue {
   box-shadow: 0 0.125rem 0 rgb(41, 152, 189);
   background-color: rgb(46, 169, 211);
+}
+
+.Button--blue:hover {
+  background-color: rgb(37, 153, 190);
 }

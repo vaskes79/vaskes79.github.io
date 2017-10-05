@@ -1,0 +1,51 @@
+.ButtonLight {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(55, 161, 142);
+  border: 2px solid rgb(61, 179, 158);
+  background: none;
+  background: rgb(255, 255, 255);
+  font-family: "PT Sans";
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  transition: background .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+.ButtonLight:hover {
+  background:rgb(245, 244, 243);
+}
+
+.ButtonLight--big {
+  width: 220px;
+  height: 54px;
+  font-size: 1.5rem;
+}
+
+.ButtonLight--normal {
+  width: 190px;
+  height: 46px;
+  font-size: 1.25em;
+}
+
+.ButtonLight--small {
+  width: 140px;
+  height: 40px;
+  font-size: 1.063em;
+}
+
+.ButtonLight--red {
+  color: rgb(226, 87, 76);
+  border: 2px solid rgb(226, 87, 76);
+}
+
+.ButtonLight--green {
+  color: rgb(61, 179, 158);
+  border: 2px solid rgb(61, 179, 158);
+}
+
+.ButtonLight--blue {
+  color: rgb(46, 169, 211);
+  border: 2px solid rgb(46, 169, 211);
+}
