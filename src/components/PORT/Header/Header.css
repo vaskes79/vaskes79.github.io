@@ -1,0 +1,55 @@
+.Header {
+  min-height: 250px;
+  position: relative;
+  padding: 19px;
+}
+
+.Header__title {
+
+}
+
+.Header__titleName {
+  margin-top: .4em;
+  display: block;
+  font-size: .7em;
+  position: relative;
+  max-width: 768px;
+}
+
+.Header__rightContainer {
+  /* dev */ border: 1px solid greenyellow;
+  /* dev */ height: 25px;
+  /* dev */ width: 75px;
+  margin-top: .4em;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
+
+.Header__bio {
+  max-width: 768px;
+}
+
+@media (min-width: 320px) {
+  .Header__rightContainer {
+    position: absolute;
+  }
+}
+
+@media (min-width: 375px) {
+  .Header__rightContainer {
+    background-color: greenyellow;
+  }
+}
+
+@media (min-width: 768px) {
+  .Header__rightContainer {
+    background-color: goldenrod;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Header__rightContainer {
+    background-color: blueviolet;
+  }
+}
