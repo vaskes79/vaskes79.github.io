@@ -1,0 +1,15 @@
+.Main {
+  background: rgb(234, 233, 153);
+  width: 100%;
+  min-height: 640px;
+  position: relative;
+}
+
+.Main::before {
+  content: '';
+  position: absolute;
+  width: 282px;
+  height: 269px;
+  background-image: url('./img/featured-label.png');
+  background-repeat: no-repeat;
+}
