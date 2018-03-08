@@ -1,12 +1,37 @@
 .Resume {
-  position: fixed;
+  position: absolute;
   /* display: none; */
   top: 0;
   left: 0;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(0, 0, 0, .8);
   padding: 2em;
+  overflow: hidden;
+}
+
+.Resume__header, .Resume__footer {
+  position: relative;
+}
+
+.Resume__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Resume__part {
+  margin-top: 2.6em;
+  flex-basis: 400px;
+}
+
+.Resume__partCategory {
+  display: flex;
+}
+
+.Resume__partCategoryContentItem {
+  color: rgba(255, 255, 255, .8);
+  list-style: none;
+  margin: 0;
 }
 
 .Resume__title {
@@ -41,23 +66,23 @@
   font-weight: 400;
   text-transform: capitalize;
   font-size: 0.875em;
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .4);
 }
 
 .Resume__year {
   font-weight: 100;
   text-transform: capitalize;
   font-size: 0.875em;
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .4);
 }
 
 .Resume__info {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, .5);
   max-width: 340px;
 }
 
 .Resume__closeBtn {
-  position: fixed;
+  position: absolute;
   right: 2.6em;
   text-decoration: none;
   color: rgb(153, 152, 99);
@@ -69,17 +94,4 @@
   color: rgb(234, 233, 153);
 }
 
-.Resume__part {
-  margin-top: 2.6em;
-}
-
-.Resume__partCategory {
-  display: flex;
-}
-
-.Resume__partCategoryContentItem {
-  color: rgba(255, 255, 255, .8);
-  list-style: none;
-  margin: 0;
-}
 
