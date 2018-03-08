@@ -5,7 +5,8 @@
 }
 
 .Header__title {
-
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  font-weight: 400;
 }
 
 .Header__titleName {
@@ -17,9 +18,6 @@
 }
 
 .Header__rightContainer {
-  /* dev */ border: 1px solid greenyellow;
-  /* dev */ height: 25px;
-  /* dev */ width: 75px;
   margin-top: .4em;
   position: relative;
   right: 0;
@@ -36,20 +34,24 @@
   }
 }
 
+/* for dev exmaple the stop points
+@media (min-width: 320px) {
+  .differentClass {
+  }
+}
 @media (min-width: 375px) {
-  .Header__rightContainer {
-    background-color: greenyellow;
+  .differentClass {
   }
 }
 
 @media (min-width: 768px) {
-  .Header__rightContainer {
-    background-color: goldenrod;
+  .differentClass  {
   }
 }
 
 @media (min-width: 1024px) {
-  .Header__rightContainer {
-    background-color: blueviolet;
+  .differentClass {
   }
 }
+*/
+

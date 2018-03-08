@@ -1,3 +1,5 @@
+import './fonts/museo_300_macroman/stylesheet.css'
+
 const COLORS = {
   'accent': 'rgb(255, 30, 70)',
   'bgDark':'rgb(29, 29, 29)',

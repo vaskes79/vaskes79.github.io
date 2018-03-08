@@ -2,6 +2,7 @@ import React from 'react'
 //import PropTypes from 'prop-types'
 import './Header.css'
 import {COLORS} from '../Themes/default'
+import Social from '../Social'
 
 
 const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
@@ -17,7 +18,9 @@ const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
         WebPortfolio
         <strong className="Header__titleName" style={{color:subTitleColor}}>
           Vasily Guzov
-      <div className="Header__rightContainer"></div>
+      <div className="Header__rightContainer">
+        <Social />
+      </div>
         </strong>
       </h1>
 
