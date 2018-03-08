@@ -1,0 +1,85 @@
+.Resume {
+  position: fixed;
+  /* display: none; */
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 2em;
+}
+
+.Resume__title {
+  font-size: 2.6em;
+  font-weight: 200;
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  color: rgba(255, 255, 255, .8);
+  text-transform: capitalize;
+}
+
+.Resume__subTitle {
+  font-size: 1.3em;
+  font-weight: 200;
+  line-height: 1.3em;
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  color: rgba(255, 255, 255, .8);
+  text-transform: capitalize;
+}
+
+.Resume__link {
+  color: rgb(153, 152, 99);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color 0.1s ease-in-out;
+}
+
+.Resume__link:hover {
+  color: rgb(234, 233, 153);
+}
+
+.Resume__category {
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 0.875em;
+  color: rgba(255, 255, 255, .5);
+}
+
+.Resume__year {
+  font-weight: 100;
+  text-transform: capitalize;
+  font-size: 0.875em;
+  color: rgba(255, 255, 255, .5);
+}
+
+.Resume__info {
+  color: rgba(255, 255, 255, .7);
+  max-width: 340px;
+}
+
+.Resume__closeBtn {
+  position: fixed;
+  right: 2.6em;
+  text-decoration: none;
+  color: rgb(153, 152, 99);
+  text-transform: lowercase;
+  transition: color 0.1s ease-in-out;
+}
+
+.Resume__closeBtn:hover {
+  color: rgb(234, 233, 153);
+}
+
+.Resume__part {
+  margin-top: 2.6em;
+}
+
+.Resume__partCategory {
+  display: flex;
+}
+
+.Resume__partCategoryContentItem {
+  color: rgba(255, 255, 255, .8);
+  list-style: none;
+  margin: 0;
+}
+
