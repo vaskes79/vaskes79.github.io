@@ -3,13 +3,16 @@ import React from 'react'
 import Header from '../components/PORT/Header'
 import Resume from '../components/PORT/Resume'
 import Main from '../components/PORT/Main'
+import PortfolioItem from '../components/PORT/PortfolioItem'
 
 const StyleGide = () => {
 
   return (
     <div>
       <Header />
-      <Main />
+      <Main>
+        <PortfolioItem />
+      </Main>
       <Resume />
     </div>
   )
