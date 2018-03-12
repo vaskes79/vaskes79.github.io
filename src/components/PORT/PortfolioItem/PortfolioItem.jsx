@@ -1,24 +1,37 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import './PortfolioItem.css'
 
-const PortfolioItem = ({title, img, content}) => {
-  return(
-    <div className="PortfolioItem">
-      <img className="PortfolioItem__img"  alt={title} src={img} />
-      <h1 className="PortfolioItem__title" >{title}</h1>
-      <div className="PortfolioItem__content">
-        <div className="PortfolioItem__closeBtn" />
-        <article className="PortfolioItem__article">
-          <img className="PortfolioItem__articleImg" alt={content.title} src={content.img} />
-          <div className="PortfolioItem__descriptionConatiner">
-            <h1 className="PortfolioItem__articleTitle">{content.title}</h1>
-            <div className="PortfolioItem__articleDescription">{content.description}</div>
-          </div>
-        </article>
+class PortfolioItem extends Component {
+  state = {
+    isOpen: false
+  }
+
+  handleOpenCloseProject = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
+  render() {
+    let {title, img, content} = this.props;
+    return(
+      <div className="PortfolioItem">
+        <img className="PortfolioItem__img"  alt={title} src={img} />
+        <h1 className="PortfolioItem__title" onClick={this.handleOpenCloseProject} >{title}</h1>
+        <div className={`PortfolioItem__content ${this.state.isOpen ? 'PortfolioItem__content--open': ''}` }>
+          <div className="PortfolioItem__closeBtn" onClick={this.handleOpenCloseProject} />
+          <article className="PortfolioItem__article">
+            <img className="PortfolioItem__articleImg" alt={content.title} src={content.img} />
+            <div className="PortfolioItem__descriptionConatiner">
+              <h1 className="PortfolioItem__articleTitle">{content.title}</h1>
+              <div className="PortfolioItem__articleDescription">{content.description}</div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 PortfolioItem.defaultProps = {

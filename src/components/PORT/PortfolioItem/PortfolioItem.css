@@ -1,5 +1,6 @@
 .PortfolioItem {
   position: relative;
+  margin: 0 auto;
   width: 340px;
   height: 340px;
 }
@@ -54,6 +55,9 @@
   background: rgb(29, 26, 26);
   transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
 }
+.PortfolioItem__content--open {
+  top: 0;
+}
 
 .PortfolioItem__closeBtn {
   position: absolute;
@@ -71,6 +75,7 @@
   cursor: pointer;
   transition: all 200ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
 }
+
 
 .PortfolioItem__closeBtn:hover {
   background: rgba(234, 233, 153, .5);
