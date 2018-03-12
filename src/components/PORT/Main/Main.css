@@ -10,7 +10,6 @@
 .Main__container {
   position: relative;
   width: 90.66666666666667%; /* 340 / 375 */
-  /* for dev */ border: 1px solid green;
   margin: 0 auto;
 }
 
