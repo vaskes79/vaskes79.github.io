@@ -6,8 +6,6 @@ import Helmet from 'react-helmet'
 import './index.css'
 import './fonts/stylegide.css'
 import './stylegide.css'
-import './grid/col.css'
-import './grid/12cols.css'
 
 const TemplateWrapper = ({children}) => (
   <div>

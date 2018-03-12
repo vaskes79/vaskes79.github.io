@@ -9,8 +9,8 @@ const StyleGide = () => {
   return (
     <div>
       <Header />
-      <Resume />
       <Main />
+      <Resume />
     </div>
   )
 }

@@ -18,9 +18,9 @@ const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
         WebPortfolio
         <strong className="Header__titleName" style={{color:subTitleColor}}>
           Vasily Guzov
-      <div className="Header__rightContainer">
-        <Social />
-      </div>
+          <div className="Header__rightContainer">
+            <Social />
+          </div>
         </strong>
       </h1>
 
