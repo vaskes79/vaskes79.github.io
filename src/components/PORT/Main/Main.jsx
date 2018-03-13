@@ -13,7 +13,7 @@ const Main = ({children}) => {
 }
 
 Main.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.node
 }
 
 export default Main

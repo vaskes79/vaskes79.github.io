@@ -5,6 +5,7 @@
   width: 100%;
   min-height: 640px;
   position: relative;
+  text-align: center;
 }
 
 .Main__container {
@@ -14,10 +15,13 @@
 }
 
 .Main::before {
-  content: '';
   position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
   width: 282px;
   height: 269px;
+  content: '';
   background-image: url('./img/featured-label.png');
   background-repeat: no-repeat;
 }

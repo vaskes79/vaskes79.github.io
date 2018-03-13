@@ -4,6 +4,15 @@ import Header from '../components/PORT/Header'
 import Resume from '../components/PORT/Resume'
 import Main from '../components/PORT/Main'
 import PortfolioItem from '../components/PORT/PortfolioItem'
+import ReadMore from '../components/PORT/ReadMore'
+
+// demo data import
+import demoPortfolioData from '../data/portfolioItemDemo.json'
+
+const PortfolioArray = Object.keys(demoPortfolioData).map(porfolioId => {
+  const {title, img, content} = demoPortfolioData[porfolioId]
+  return <PortfolioItem key={porfolioId} title={title} img={img} content={content} />
+})
 
 const StyleGide = () => {
 
@@ -11,7 +20,10 @@ const StyleGide = () => {
     <div>
       <Header />
       <Main>
-        <PortfolioItem />
+        <div>
+          {/* { PortfolioArray } */}
+          <ReadMore />
+        </div>
       </Main>
       <Resume />
     </div>
