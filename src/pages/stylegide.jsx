@@ -5,6 +5,7 @@ import Resume from '../components/PORT/Resume'
 import Main from '../components/PORT/Main'
 import PortfolioItem from '../components/PORT/PortfolioItem'
 import ReadMore from '../components/PORT/ReadMore'
+import Footer from '../components/PORT/Footer'
 
 // demo data import
 import demoPortfolioData from '../data/portfolioItemDemo.json'
@@ -22,9 +23,10 @@ const StyleGide = () => {
       <Main>
         <div>
           {/* { PortfolioArray } */}
-          <ReadMore />
+          {/* <ReadMore /> */}
         </div>
       </Main>
+      <Footer />
       <Resume />
     </div>
   )

@@ -1,0 +1,14 @@
+.FooterAddress {
+
+}
+
+.FooterAddress__title {
+  color: rgb(234, 233, 153);
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 46px 0;
+}
+
+.FooterAddress__address {
+  color: rgba(255, 255, 255, .4);
+}

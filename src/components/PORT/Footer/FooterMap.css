@@ -1,0 +1,10 @@
+.FooterMap {
+
+}
+
+.FooterMap__title {
+  color: rgb(234, 233, 153);
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 46px 0;
+}

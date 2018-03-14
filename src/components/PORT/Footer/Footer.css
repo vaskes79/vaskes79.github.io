@@ -1,0 +1,11 @@
+.Footer {
+  background: rgb(32, 29, 29);
+  padding: 19px 0;
+  min-height: 150px;
+  color: rgba(234, 233, 153, .6);
+}
+
+.Footer__container {
+  margin: 0 auto;
+  width: 90.66666666666667%; /* 340 / 375 */
+}

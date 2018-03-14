@@ -1,0 +1,44 @@
+.FooterContact {
+  color: rgba(255, 255, 255, .4);
+}
+.FooterContact__title {
+  color: rgb(234, 233, 153);
+  font-family: 'Museo300-Regular', Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 46px 0;
+}
+.FooterContact__itemContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.Footer__contactItem{
+  position: relative;
+  padding-left: 2.5em;
+  font-size: 13px;
+  line-height: 1em;
+}
+
+.Footer__contactItem::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 19px;
+  background-image: url('./img/contact-icons.png');
+  background-size: auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+.FooterContact__mesanger::before {
+  background-position: 0 0;
+}
+.FooterContact__phone::before {
+  background-position: 0 -39px;
+}
+.FooterContact__email::before {
+  background-position: 0 -18px;
+}
