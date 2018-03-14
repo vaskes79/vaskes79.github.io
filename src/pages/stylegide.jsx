@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 //import Link from 'gatsby-link'
 import Header from '../components/PORT/Header'
 import Resume from '../components/PORT/Resume'
@@ -15,21 +15,23 @@ const PortfolioArray = Object.keys(demoPortfolioData).map(porfolioId => {
   return <PortfolioItem key={porfolioId} title={title} img={img} content={content} />
 })
 
-const StyleGide = () => {
+class StyleGide extends Component {
 
-  return (
-    <div>
-      <Header />
-      <Main>
-        <div>
-          {/* { PortfolioArray } */}
-          {/* <ReadMore /> */}
-        </div>
-      </Main>
-      <Footer />
-      <Resume />
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <Header />
+        <Main>
+          <div>
+            { PortfolioArray }
+            {/* <ReadMore /> */}
+          </div>
+        </Main>
+        <Footer />
+        <Resume />
+      </div>
+    )
+  }
 }
 
 //export const query = graphql`

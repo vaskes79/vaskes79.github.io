@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import CloseBtn from '../CloseBtn'
 import './PortfolioItem.css'
 
 class PortfolioItem extends Component {
@@ -20,7 +21,9 @@ class PortfolioItem extends Component {
         <img className="PortfolioItem__img"  alt={title} src={img} />
         <h1 className="PortfolioItem__title" onClick={this.handleOpenCloseProject} >{title}</h1>
         <div className={`PortfolioItem__content ${this.state.isOpen ? 'PortfolioItem__content--open': ''}` }>
-          <div className="PortfolioItem__closeBtn" onClick={this.handleOpenCloseProject} />
+          <header className="PortfolioItem__articleHeader">
+            <CloseBtn actionClose={this.handleOpenCloseProject} />
+          </header>
           <article className="PortfolioItem__article">
             <img className="PortfolioItem__articleImg" alt={content.title} src={content.img} />
             <div className="PortfolioItem__descriptionConatiner">
