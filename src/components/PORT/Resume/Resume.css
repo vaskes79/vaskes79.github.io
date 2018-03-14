@@ -80,18 +80,3 @@
   color: rgba(255, 255, 255, .5);
   max-width: 340px;
 }
-
-.Resume__closeBtn {
-  position: absolute;
-  right: 2.6em;
-  text-decoration: none;
-  color: rgb(153, 152, 99);
-  text-transform: lowercase;
-  transition: color 0.1s ease-in-out;
-}
-
-.Resume__closeBtn:hover {
-  color: rgb(234, 233, 153);
-}
-
-

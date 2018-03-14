@@ -1,11 +1,12 @@
 import React from 'react'
+import CloseBtn from '../CloseBtn'
 import './Resume.css'
 
 const Resume = () => {
   return (
     <section className="Resume">
       <header className="Resume__header">
-        <a href="#" className="Resume__closeBtn">→ close panel</a>
+        <CloseBtn />
       </header>
       <div className="Resume__container">
         <article className="Resume__part">
@@ -136,7 +137,7 @@ const Resume = () => {
 
 
       <footer className="Resume__footer">
-        <a href="#" className="Resume__closeBtn">→ close panel</a>
+        <CloseBtn />
       </footer>
     </section>
   )

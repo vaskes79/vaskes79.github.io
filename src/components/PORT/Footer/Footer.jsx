@@ -21,7 +21,11 @@ const ADDRESS = {
 
 const MAP = {
   title: 'location direction on google maps',
-  coordinate: 'coordinate',
+  coordinate: {
+    center: {lat: 59.940896, lng: 30.204649},
+    zoom: 15,
+    mapTypeId: 'roadmap'
+  },
   img: 'https://downloader.disk.yandex.ru/preview/0c01f1b7f910b30987857d1f63c9d7b0e9e2dbc4378ad97e1368ef0230c4ace3/inf/Hosfs0mUHOxL8OlXmcDfwJ4dsXr-BlYPQsaDpvAeL0jWit1-F763rXDVNtgtaXzXqDbLn_ARS4jVoQMiDR4VoQ%3D%3D?uid=0&filename=2018-03-13_13-57-07.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&tknv=v2&size=1280x893'
 }
 //

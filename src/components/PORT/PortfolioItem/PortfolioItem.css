@@ -45,10 +45,10 @@
 }
 
 .PortfolioItem__content {
-  /* display: none; */
+  display: none;
   position: fixed;
   color: rgb(153, 152, 99);
-  top: -200%;
+  top: -150vh;
   left: 0;
   width: 100%;
   height: 100vh;
