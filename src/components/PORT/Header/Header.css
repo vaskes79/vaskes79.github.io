@@ -2,6 +2,8 @@
   min-height: 250px;
   position: relative;
   padding: 19px;
+  max-width: 1020px;
+  margin: 0 auto;
 }
 
 .Header * {
@@ -38,6 +40,13 @@
 @media (min-width: 320px) {
   .Header__rightContainer {
     position: absolute;
+  }
+}
+
+@media (min-width: 800px) {
+  .Header__container {
+    width: 800px;
+    margin: 0 auto;
   }
 }
 

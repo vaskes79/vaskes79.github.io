@@ -93,6 +93,16 @@
   }
 }
 
+@media (min-width: 800px) {
+  .PortfolioItem  {
+    width: 160px;
+    height: 160px;
+    margin: 0;
+    display: inline-block;
+    margin-bottom: -7px;
+  }
+}
+
 /* transform point
 320
 375

@@ -22,10 +22,7 @@ class StyleGide extends Component {
       <div>
         <Header />
         <Main>
-          <div>
-            { PortfolioArray }
-            {/* <ReadMore /> */}
-          </div>
+          {PortfolioArray}
         </Main>
         <Footer />
         <Resume />

@@ -13,18 +13,19 @@ const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
         backgroundColor: bgColor,
         color: color,
       }}>
+      <div className="Header__container">
+        <h1 className="Header__title" style={{color: titleColor}}>
+          WebPortfolio
+          <strong className="Header__titleName" style={{color:subTitleColor}}>
+            Vasily Guzov
+            <div className="Header__rightContainer">
+              <Social />
+            </div>
+          </strong>
+        </h1>
 
-      <h1 className="Header__title" style={{color: titleColor}}>
-        WebPortfolio
-        <strong className="Header__titleName" style={{color:subTitleColor}}>
-          Vasily Guzov
-          <div className="Header__rightContainer">
-            <Social />
-          </div>
-        </strong>
-      </h1>
-
-      <p className="Header__bio">Hi! My name is Vasily Guzov. I'm a profesional actor and amauter photographer. Here you will find my reflections aboute life, my photo works as well as some photos with me. Thanks for watching.</p>
+        <p className="Header__bio">Hi! My name is Vasily Guzov. I'm a profesional actor and amauter photographer. Here you will find my reflections aboute life, my photo works as well as some photos with me. Thanks for watching.</p>
+      </div>
     </header>
   )
 }

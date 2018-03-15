@@ -1,9 +1,16 @@
+body, html {
+  background-image: url('./img/bg.jpg');
+  overflow-x: hidden;
+}
+
 .Main {
   display: block;
   position: relative;
   background: rgb(234, 233, 153);
   width: 100%;
+  max-width: 1020px;
   min-height: 640px;
+  margin: 0 auto;
   position: relative;
   text-align: center;
 }
@@ -11,7 +18,18 @@
 .Main__container {
   position: relative;
   width: 90.66666666666667%; /* 340 / 375 */
+  max-width: 800px;
   margin: 0 auto;
+}
+
+.Main__header, .Main__footer {
+  position: relative;
+  padding-top: 30px;
+  width: 90.66666666666667%; /* 340 / 375 */
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 100;
+  min-height: 100px;
 }
 
 .Main::before {
@@ -24,4 +42,11 @@
   content: '';
   background-image: url('./img/featured-label.png');
   background-repeat: no-repeat;
+}
+
+@media (min-width: 800px) {
+  .Main::before {
+    top: 19px;
+    left: 19px;
+  }
 }
