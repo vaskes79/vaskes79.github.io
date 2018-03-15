@@ -29,7 +29,7 @@ class FilterPortfolio extends Component {
     render() {
         return (
             <div className="FilterPortfolio">
-              <h2 className="FilterPortfolio__title" onClick={this.openClose}>filter by</h2>
+              <h2 className="FilterPortfolio__title" onClick={this.openClose}>filter by →</h2>
               <ul className={`FilterPortfolio__itemContainer ${this.state.isOpen ? 'FilterPortfolio__itemContainer--open':''}`}>
                 {
                   this.state.filters.map( ({name, val}) => {
