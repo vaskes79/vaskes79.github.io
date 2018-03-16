@@ -13,9 +13,19 @@
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .Footer__container > * {
-  max-width: 200px;
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (min-width: 800px) {
+  .Footer__container{
+    justify-content: space-between;
+  }
+  .Footer__container > * {
+    max-width: 200px;
+  }
 }

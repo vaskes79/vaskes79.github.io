@@ -16,6 +16,7 @@ class PortfolioItem extends Component {
 
   render() {
     let {title, img, content} = this.props;
+
     return(
       <div className="PortfolioItem">
         <img className="PortfolioItem__img"  alt={title} src={img} />
@@ -25,7 +26,7 @@ class PortfolioItem extends Component {
             <CloseBtn actionClose={this.handleOpenCloseProject} />
           </header>
           <article className="PortfolioItem__article">
-            <img className="PortfolioItem__articleImg" alt={content.title} src={content.img} />
+            <div className="PortfolioItem__articleImg" style={{backgroundImage: `url(${content.img})` }}></div>
             <div className="PortfolioItem__descriptionConatiner">
               <h1 className="PortfolioItem__articleTitle">{content.title}</h1>
               <div className="PortfolioItem__articleDescription">{content.description}</div>

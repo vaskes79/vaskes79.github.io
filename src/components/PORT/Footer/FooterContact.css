@@ -2,10 +2,12 @@
   color: rgba(255, 255, 255, .4);
 }
 .FooterContact__title {
+  font-size: 1em;
   color: rgb(234, 233, 153);
+  line-height: 1em;
   font-family: 'Museo300-Regular', Helvetica, sans-serif;
   font-weight: 300;
-  margin: 46px 0;
+  min-height: 20px;
 }
 .FooterContact__itemContainer {
   list-style: none;

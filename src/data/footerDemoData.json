@@ -10,7 +10,7 @@
     "address": "my location addres and differen info"
   },
   "MAP": {
-    "title": "location direction on google maps",
+    "title": "my location on maps",
     "coordinate": {
       "center": {
         "lat": 59.940896,

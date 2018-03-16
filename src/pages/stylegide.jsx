@@ -7,13 +7,6 @@ import PortfolioItem from '../components/PORT/PortfolioItem'
 import ReadMore from '../components/PORT/ReadMore'
 import Footer from '../components/PORT/Footer'
 
-// demo data import
-import demoPortfolioData from '../data/portfolioItemDemo.json'
-
-const PortfolioArray = Object.keys(demoPortfolioData).map(porfolioId => {
-  const {title, img, content} = demoPortfolioData[porfolioId]
-  return <PortfolioItem key={porfolioId} title={title} img={img} content={content} />
-})
 
 class StyleGide extends Component {
 
@@ -21,9 +14,7 @@ class StyleGide extends Component {
     return (
       <div>
         <Header />
-        <Main>
-          {PortfolioArray}
-        </Main>
+        <Main />
         <Footer />
         <Resume />
       </div>

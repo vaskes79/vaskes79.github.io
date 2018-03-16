@@ -1,0 +1,10 @@
+[
+ { "val": "all", "name": "all"},
+ { "val": "pro", "name": "projects"},
+ { "val": "reCom", "name": "reactComponents"},
+ { "val": "landing", "name": "landing"},
+ { "val": "css", "name": "css"},
+ { "val": "anim", "name": "animation"},
+ { "val": "js", "name": "js"},
+ { "val": "svg", "name": "svg"}
+]
