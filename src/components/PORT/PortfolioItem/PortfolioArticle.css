@@ -1,0 +1,64 @@
+.PortfolioArticle {
+  display: flex;
+  overflow: hidden;
+}
+
+.PortfolioArticle__img {
+  background-position: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  height: 100vh;
+}
+.PortfolioArticle__header {
+  position: absolute;
+  right: 5%;
+  height: 50px;
+  padding: 10px;
+  background: rgba(29,26, 26, .8);
+  text-align: right;
+}
+
+
+.PortfolioArticle__descriptionConatiner {
+  width: 60%; /* 340 / 375 */
+}
+
+
+.PortfolioArticle__title,
+.PortfolioArticle__description {
+  width: 80%;
+  max-width: 480px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.PortfolioArticle__title {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+/*
+anamiation classes for css-transition-group
+*/
+.PortfolioArticle__animation-enter {
+  transform: translateX(-100vw);
+}
+
+.PortfolioArticle__animation-enter.PortfolioArticle__animation-enter-active {
+  transform: translateX(0);
+  transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
+}
+
+.PortfolioArticle__animation-leave {
+  transform: translateX(0);
+}
+
+.PortfolioArticle__animation-leave.PortfolioArticle__animation-leave-active {
+  transform: translateX(-100vw);
+  transition: all 200ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
+}
+
+/*
+end animation
+*/

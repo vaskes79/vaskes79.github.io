@@ -40,40 +40,18 @@
   position: fixed;
   color: rgb(153, 152, 99);
   z-index: 1000;
-  top: -250vh;
   left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background: rgb(29, 26, 26);
   transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
   /* for dev */
-  display: none;
+  /* display: none; */
 }
 .PortfolioItem__content--open {
   top: 0;
 }
 
-.PortfolioItem__articleImg {
-  background-position: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  margin: 0 auto;
-  height: 80vh;
-}
-.PortfolioItem__articleHeader {
-  position: absolute;
-  right: 5%;
-  height: 50px;
-  padding: 10px;
-  background: rgba(29,26, 26, .8);
-  text-align: right;
-}
-
-.PortfolioItem__descriptionConatiner {
-  width: 90.66666666666667%; /* 340 / 375 */
-  margin: 0 auto;
-}
 
 @media (min-width: 320px) {
   .PortfolioItem  {
