@@ -37,6 +37,10 @@
   max-width: 768px;
 }
 
+.Header__resumeBtn {
+  cursor: pointer;
+}
+
 @media (min-width: 320px) {
   .Header__rightContainer {
     position: absolute;

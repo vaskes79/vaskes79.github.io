@@ -60,6 +60,10 @@ class IndexPage extends Component {
       resumeOpen: !this.state.resumeOpen
     })
   }
+
+  filterProjects = (filter) => {
+    return this.state.projects.filter( item => item.filter === filter);
+  }
   showContent = () => {
     let {projects, filters, currentFilter, resumeOpen} = this.state;
     return (
@@ -68,7 +72,7 @@ class IndexPage extends Component {
           openResume={this.openResume}
           isOpen={resumeOpen}  />
         <Main
-          portfolioData={projects}
+          portfolioData={currentFilter !== 'all' ? this.filterProjects(currentFilter) : projects}
           filters={filters}
           currentFilter={currentFilter}
           onChangeFilter={this.changeFilter}/>

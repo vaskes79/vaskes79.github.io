@@ -25,7 +25,7 @@ class FilterPortfolio extends Component {
       }
     }
     openClose = (e) => {
-      let currentFilter = e.target.getAttribute('data-name') || 'all';
+      let currentFilter = e.target.getAttribute('data-value') || 'all';
       let isOpen = e.target.getAttribute('data-hover') === 'hover' ? false : !this.state.isOpen;
       this.setState({
         isOpen,
@@ -51,6 +51,7 @@ class FilterPortfolio extends Component {
                       >
                         <span
                           data-name={name}
+                          data-value={val}
                           data-hover="hover"
                           className={`FilterPortfolio__item ${currentFilter === name ? 'FilterPortfolio__item--active': ''}`}
                           >{name}
