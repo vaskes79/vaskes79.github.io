@@ -5,24 +5,32 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import Pagination from '../Pagination'
 import FilterPortfolio from '../FilterPortfolio'
 import PortfolioItem from '../PortfolioItem'
-import FILTERS_DEMO from '../../../data/filtersDemoData.json'
 import './Main.css'
 // demo data import
-import PORTFOLIO_DEMO_DATA from '../../../data/demoPortfolioGenerate.json'
 
 
 class Main extends Component {
   state = {
-    currentFilter: 'all',
-    filters: FILTERS_DEMO,
     portfolioData: [],
     pageOfItems: [],
   }
 
   componentWillMount(){
+    let {portfolioData, filters} = this.props;
     this.setState({
-      portfolioData: PORTFOLIO_DEMO_DATA
+      portfolioData,
+      filters,
     })
+  }
+
+  componentWillReceiveProps(nextPropts) {
+    let {portfolioData, filters} = nextPropts;
+
+    if(portfolioData && portfolioData.length > 0 ) {
+      this.setState({
+        portfolioData
+      })
+    }
   }
 
   getRandomArbitrary = (min, max) =>{
@@ -34,7 +42,6 @@ class Main extends Component {
       const {title, img, content, _id} = portfolioItem
       return (
         <CSSTransitionGroup
-          key={`cssTransition_${_id}`}
           transitionName="example"
           transitionEnterTimeout={this.getRandomArbitrary(500, 1000)}
           transitionLeaveTimeout={this.getRandomArbitrary(200, 500)}
@@ -45,27 +52,13 @@ class Main extends Component {
     })
   }
 
-  filterPortfolio = (filter, PORTFOLIO_DATA) => {
-    if (filter !== 'all') {
-      return PORTFOLIO_DATA.filter(item => item.filter === filter)
-    } else {
-      return PORTFOLIO_DATA
-    }
-  }
-
-  changeFilter = (e) => {
-    if(e.target.id) {
-      let currentFilter = e.target.id;
-      this.setState({ currentFilter })
-    }
-  }
-
   onChangePage = (pageOfItems) => {
     this.setState({pageOfItems})
   }
 
   render() {
-    let {filters, currentFilter, pageOfItems, portfolioData} = this.state;
+    let {pageOfItems, portfolioData} = this.state;
+    let {filters, currentFilter, onChangeFilter} = this.props;
 
     return (
       <section className='Main'>
@@ -73,7 +66,7 @@ class Main extends Component {
           <FilterPortfolio
             filters={filters}
             currentFilter={currentFilter}
-            changeFilter={this.changeFilter}
+            changeFilter={onChangeFilter}
             />
         </header>
         <div className="Main__container">
@@ -89,6 +82,10 @@ class Main extends Component {
 
 Main.propTypes = {
   children: PropTypes.array,
+  portfolioData: PropTypes.array.isRequired,
+  filters: PropTypes.array.isRequired,
+  currentFilter: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
 }
 
 export default Main

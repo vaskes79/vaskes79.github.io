@@ -6,7 +6,6 @@ import './FilterPortfolio.css'
 class FilterPortfolio extends Component {
     state = {
       isOpen: false,
-      currentFilter: 'all'
     }
     componentWillMount() {
       const {filters, currentFilter} = this.props;
@@ -15,18 +14,27 @@ class FilterPortfolio extends Component {
         currentFilter
       })
     }
+
+    componentWillReceiveProps(nextPropts) {
+      let {filters} = nextPropts;
+
+      if(filters && filters.length > 0 ) {
+        this.setState({
+          filters
+        })
+      }
+    }
     openClose = (e) => {
       let currentFilter = e.target.getAttribute('data-name') || 'all';
       let isOpen = e.target.getAttribute('data-hover') === 'hover' ? false : !this.state.isOpen;
       this.setState({
         isOpen,
-        currentFilter,
       })
-      this.props.changeFilter(e);
+      this.props.changeFilter(currentFilter);
     }
     render() {
-        let {switchFitler} = this.props;
-        let {currentFilter, isOpen} = this.state;
+        let {switchFitler, currentFilter} = this.props;
+        let {isOpen} = this.state;
         return (
             <div className="FilterPortfolio">
               <h2 className="FilterPortfolio__title" onClick={this.openClose}>filter by → </h2>
