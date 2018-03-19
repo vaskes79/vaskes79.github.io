@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import { CSSTransitionGroup } from 'react-transition-group'
+
 import Pagination from '../Pagination'
 import FilterPortfolio from '../FilterPortfolio'
 import PortfolioItem from '../PortfolioItem'
@@ -23,10 +25,23 @@ class Main extends Component {
     })
   }
 
+  getRandomArbitrary = (min, max) =>{
+    return Math.random() * (max - min) + min;
+  }
+
   createPortfolioNodes = (PORTFOLIO_DATA) =>{
-    return PORTFOLIO_DATA.map(portfolioItem => {
+    return PORTFOLIO_DATA.map((portfolioItem, i) => {
       const {title, img, content, _id} = portfolioItem
-      return <PortfolioItem key={_id} title={title} img={img} content={content} />
+      return (
+        <CSSTransitionGroup
+          key={`cssTransition_${_id}`}
+          transitionName="example"
+          transitionEnterTimeout={this.getRandomArbitrary(500, 1000)}
+          transitionLeaveTimeout={this.getRandomArbitrary(200, 500)}
+          >
+          <PortfolioItem key={_id} title={title} img={img} content={content} />
+        </CSSTransitionGroup>
+      )
     })
   }
 

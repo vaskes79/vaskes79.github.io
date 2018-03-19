@@ -46,6 +46,8 @@
   min-height: 100vh;
   background: rgb(29, 26, 26);
   transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
+  /* for dev */
+  display: none;
 }
 .PortfolioItem__content--open {
   top: 0;

@@ -18,7 +18,7 @@ body, html {
 .Main__container {
   position: relative;
   width: 90.66666666666667%; /* 340 / 375 */
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -44,9 +44,44 @@ body, html {
   background-repeat: no-repeat;
 }
 
+/*
+anamiation classes for css-transition-group
+*/
+.example-enter {
+  opacity: 0.01;
+  transform: scale(0) rotate(180deg);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  transition: all 1000ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
+}
+
+.example-leave {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transform: scale(0) rotate(-360deg);
+  transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
+}
+
+/*
+end animation
+*/
+
 @media (min-width: 800px) {
   .Main::before {
     top: 19px;
     left: 19px;
   }
+  .Main__container {
+    height: 640px;
+    overflow: hidden;
+  }
 }
+
+
