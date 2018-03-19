@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "firebase": "^4.11.0",
     "gatsby": "^1.9.17",
     "gatsby-link": "^1.6.15",
