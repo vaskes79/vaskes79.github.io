@@ -54,11 +54,19 @@ class IndexPage extends Component {
    * for view loader or resume page or portfolio page
    * maked becose I going add this functionality
    */
+  openResume = () => {
+    // if(e.prevetDefault) e.preventDefault();
+    this.setState({
+      resumeOpen: !this.state.resumeOpen
+    })
+  }
   showContent = () => {
-    let {projects, filters, currentFilter} = this.state;
+    let {projects, filters, currentFilter, resumeOpen} = this.state;
     return (
       <div>
-        <Header />
+        <Header
+          openResume={this.openResume}
+          isOpen={resumeOpen}  />
         <Main
           portfolioData={projects}
           filters={filters}
@@ -71,7 +79,7 @@ class IndexPage extends Component {
 
   render () {
     let {loading, resumeOpen} = this.state;
-    const CONTENT = loading ? <div>loading...</div> : resumeOpen ? <Resume /> : this.showContent();
+    const CONTENT = loading ? <div>loading...</div> : resumeOpen ? <Resume closeHandler={this.openResume} /> : this.showContent();
     return (
       <div>
         {CONTENT}

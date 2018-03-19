@@ -1,11 +1,11 @@
 import React from 'react'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './Header.css'
 import {COLORS} from '../Themes/default'
 import Social from '../Social'
 
 
-const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
+const Header = ({openResume, color, bgColor, titleColor, subTitleColor }) => {
   return (
     <header
       className="Header"
@@ -25,12 +25,15 @@ const Header = ({ color, bgColor, titleColor, subTitleColor }) => {
         </h1>
 
         <p className="Header__bio">Hi! My name is Vasily Guzov. I'm a profesional actor and amauter photographer. Here you will find my reflections aboute life, my photo works as well as some photos with me. Thanks for watching.</p>
+        <i onClick={openResume}>resume</i>
       </div>
     </header>
   )
 }
 
-Header.propTypes = {}
+Header.propTypes = {
+  openResume: PropTypes.func.isRequired
+}
 
 const { bgDark, baseFont, accent, bgLight } = COLORS;
 
