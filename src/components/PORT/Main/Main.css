@@ -1,8 +1,3 @@
-body, html {
-  background-image: url('./img/bg.jpg');
-  overflow-x: hidden;
-}
-
 .Main {
   display: block;
   position: relative;

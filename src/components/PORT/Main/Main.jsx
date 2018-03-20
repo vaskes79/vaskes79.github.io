@@ -6,7 +6,6 @@ import Pagination from '../Pagination'
 import FilterPortfolio from '../FilterPortfolio'
 import PortfolioItem from '../PortfolioItem'
 import './Main.css'
-// demo data import
 
 
 class Main extends Component {

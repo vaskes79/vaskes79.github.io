@@ -1,0 +1,32 @@
+.IndexPage {
+  position: relative;
+  perspective: 1000px;
+  min-height: 100vh;
+  background-image: url('./img/bg.jpg');
+  background-size: cover;
+  animation: appear 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) .2s forwards;
+}
+
+.IndexPage__contentWrap {
+}
+
+.IndexPage__animation-appear {
+  opacity: 0.01;
+  transform: rotateY(90deg);
+}
+
+.IndexPage__animation-appear.IndexPage__animation-appear-active {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: all 500ms cubic-bezier(0.755, 0.050, 0.855, 0.060); /* easeInQuint */
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
