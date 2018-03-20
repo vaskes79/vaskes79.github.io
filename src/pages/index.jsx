@@ -6,6 +6,8 @@ import Header from '../components/PORT/Header'
 import Resume from '../components/PORT/Resume'
 import Main from '../components/PORT/Main'
 import Footer from '../components/PORT/Footer'
+import Preloader from '../components/PORT/Preloader'
+
 
 // import db modules
 import {DB as db} from '../data/firebase'
@@ -13,7 +15,7 @@ import {DB as db} from '../data/firebase'
 
 class IndexPage extends Component {
   state = {
-    loading: false,
+    loading: true,
     currentFilter: 'all',
     projects: [],
     resumeOpen: false,
@@ -83,7 +85,7 @@ class IndexPage extends Component {
 
   render () {
     let {loading, resumeOpen} = this.state;
-    const CONTENT = loading ? <div>loading...</div> : resumeOpen ? <Resume closeHandler={this.openResume} /> : this.showContent();
+    const CONTENT = loading ? <Preloader /> : resumeOpen ? <Resume closeHandler={this.openResume} /> : this.showContent();
     return (
       <div>
         {CONTENT}
