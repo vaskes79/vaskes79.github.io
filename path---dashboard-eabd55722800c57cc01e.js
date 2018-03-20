@@ -1,2 +1,0 @@
-webpackJsonp([0xcfeee7cd06ac],{"./node_modules/json-loader/index.js!./.cache/json/dashboard.json":function(e,a){e.exports={data:{site:{siteMetadata:{dashboard:{title:"личный кабинет",description:"вы вошли в личный кабинет"}}}},pathContext:{}}}});
-//# sourceMappingURL=path---dashboard-eabd55722800c57cc01e.js.map
