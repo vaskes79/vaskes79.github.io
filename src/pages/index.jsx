@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-// import Link from 'gatsby-link'
+import {CSSTransitionGroup} from 'react-transition-group'
+import {uniqueId} from 'lodash'
 
 // import modules
 import Header from '../components/PORT/Header'
@@ -7,6 +8,7 @@ import Resume from '../components/PORT/Resume'
 import Main from '../components/PORT/Main'
 import Footer from '../components/PORT/Footer'
 import Preloader from '../components/PORT/Preloader'
+import '../layouts/IndexPage.css'
 
 
 // import db modules
@@ -23,10 +25,12 @@ class IndexPage extends Component {
     filters: [],
   }
 
+
   componentWillMount() {
     this.setData('projects');
     this.setData('filters');
   }
+
   /**
    * send request to firebase
    * and add listener for observe changes
@@ -38,10 +42,14 @@ class IndexPage extends Component {
     ref.on('value', dataVal => {
         if (dataVal.exists()) {
           this.setState({
-            [dataName]: dataVal.val()
+            [dataName]: dataVal.val(),
+            loading: false
           })
         } else {
           console.log(`error set ${dataName} in CWM`);
+          this.setState({
+            loading: true
+          })
         }
       }
     )
@@ -69,7 +77,7 @@ class IndexPage extends Component {
   showContent = () => {
     let {projects, filters, currentFilter, resumeOpen} = this.state;
     return (
-      <div>
+      <div key={uniqueId('main_')} className="IndexPage__contentWrap">
         <Header
           openResume={this.openResume}
           isOpen={resumeOpen}  />
@@ -85,10 +93,16 @@ class IndexPage extends Component {
 
   render () {
     let {loading, resumeOpen} = this.state;
-    const CONTENT = loading ? <Preloader /> : resumeOpen ? <Resume closeHandler={this.openResume} /> : this.showContent();
+    const CONTENT = loading ? <Preloader key={uniqueId('Preloader_')} /> : resumeOpen ? <Resume key={uniqueId('Preloader_')} closeHandler={this.openResume} /> : this.showContent();
     return (
-      <div>
+      <div className="IndexPage">
+      {/* <CSSTransitionGroup
+        transitionName="IndexPage__animation"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={200}
+      > */}
         {CONTENT}
+      {/* </CSSTransitionGroup> */}
       </div>
     )
   }
