@@ -23,8 +23,13 @@
   width: 90.66666666666667%; /* 340 / 375 */
   max-width: 800px;
   margin: 0 auto;
-  z-index: 100;
+  z-index: 1000;
   min-height: 100px;
+}
+
+.Main__header {
+  position: sticky;
+  top: 0;
 }
 
 .Main::before {
