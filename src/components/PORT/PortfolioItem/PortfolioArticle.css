@@ -1,15 +1,23 @@
 .PortfolioArticle {
   display: flex;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .PortfolioArticle__img {
   background-position: 0;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 200% 0;
   width: 40%;
   height: 100vh;
+  transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+  transition-delay: 500ms;
 }
+.PortfolioArticle--open .PortfolioArticle__img {
+  background-position: 0;
+}
+
 .PortfolioArticle__header {
   position: absolute;
   right: 5%;
@@ -17,11 +25,14 @@
   padding: 10px;
   background: rgba(29,26, 26, .8);
   text-align: right;
+  z-index: 10;
 }
 
 
 .PortfolioArticle__descriptionConatiner {
   width: 60%; /* 340 / 375 */
+  perspective: 400px;
+  min-height: 100%;
 }
 
 
@@ -31,11 +42,30 @@
   max-width: 480px;
   text-align: left;
   margin: 0 auto;
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
 }
 
 .PortfolioArticle__title {
+  transform-origin: top center;
   margin-top: 3em;
   margin-bottom: 1em;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  transition-delay: 200ms;
+}
+
+.PortfolioArticle__description {
+  margin-left: 100%;
+  transition-delay: 800ms;
+  opacity: 0;
+}
+
+.PortfolioArticle--open .PortfolioArticle__title,
+.PortfolioArticle--open .PortfolioArticle__description {
+  margin-left: 5%;
+  transform: rotateX(0deg);
+  opacity: 1;
 }
 
 /*
@@ -47,7 +77,6 @@ anamiation classes for css-transition-group
 
 .PortfolioArticle__animation-enter.PortfolioArticle__animation-enter-active {
   transform: translateX(0);
-  transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
 }
 
 .PortfolioArticle__animation-leave {
@@ -56,7 +85,6 @@ anamiation classes for css-transition-group
 
 .PortfolioArticle__animation-leave.PortfolioArticle__animation-leave-active {
   transform: translateX(-100vw);
-  transition: all 200ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
 }
 
 /*

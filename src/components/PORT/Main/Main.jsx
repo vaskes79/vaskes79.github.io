@@ -37,6 +37,7 @@ class Main extends Component {
   }
 
   createPortfolioNodes = (PORTFOLIO_DATA) =>{
+    let {pageOpen, handleOpenCloseProject} = this.props;
     return PORTFOLIO_DATA.map((portfolioItem, i) => {
       const {title, img, content, _id} = portfolioItem
       return (

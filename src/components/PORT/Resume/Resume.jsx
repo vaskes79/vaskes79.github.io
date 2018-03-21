@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import CloseBtn from '../CloseBtn'
 import './Resume.css'
 
-const Resume = ({isOpen, closeHandler}) => {
+const Resume = ({closeHandler}) => {
 
   return (
-    <section className={`Resume ${isOpen ? 'Resume--open': ''}`}>
+    <section className="Resume">
       <header className="Resume__header">
         <CloseBtn actionClose={closeHandler} />
       </header>
@@ -147,7 +147,6 @@ const Resume = ({isOpen, closeHandler}) => {
 
 Resume.propTypes = {
   closeHandler: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired
 }
 
 export default Resume

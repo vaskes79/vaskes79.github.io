@@ -74,7 +74,7 @@ class IndexPage extends Component {
     return this.state.projects.filter( item => item.filter === filter);
   }
   showContent = () => {
-    let {projects, filters, currentFilter, resumeOpen} = this.state;
+    let {projects, filters, currentFilter, resumeOpen, pageOpen} = this.state;
     return (
 
         <div key={uniqueId('main_')} className="IndexPage__contentWrap">
@@ -96,14 +96,17 @@ class IndexPage extends Component {
     let content = loading ?
       <Preloader key={uniqueId('Preloader_')} />
       :
-      resumeOpen ?
-      <Resume key={uniqueId('Preloader_')} closeHandler={this.openResume} />
-      :
       this.showContent();
 
     return (
       <div className={`IndexPage`}>
-        {content}
+          { resumeOpen ? '' : content}
+          <CSSTransitionGroup
+          transitionName="resumeAnimation"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
+          { resumeOpen ? <Resume key={uniqueId('Preloader_')} closeHandler={this.openResume} /> : '' }
+        </CSSTransitionGroup>
       </div>
     )
   }

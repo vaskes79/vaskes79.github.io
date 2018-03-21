@@ -2,23 +2,26 @@
   position: relative;
   perspective: 1000px;
   min-height: 100vh;
+  width: 100%;
   background-image: url('./img/bg.jpg');
   background-size: cover;
   animation: appear 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) .2s forwards;
 }
 
-.IndexPage__contentWrap {
+/* setup Animation for open close resume */
+.resumeAnimation-enter{
+  transform: translateX(150vw);
 }
-
-.IndexPage__animation-appear {
-  opacity: 0.01;
-  transform: rotateY(90deg);
+.resumeAnimation-enter.resumeAnimation-enter-active{
+  transform: translateX(0);
+  transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 }
-
-.IndexPage__animation-appear.IndexPage__animation-appear-active {
-  opacity: 1;
-  transform: rotateY(0deg);
-  transition: all 500ms cubic-bezier(0.755, 0.050, 0.855, 0.060); /* easeInQuint */
+.resumeAnimation-leave{
+  transform: translateX(0);
+}
+.resumeAnimation-leave.resumeAnimation-leave-active{
+  transform: translateX(100vw);
+  transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 }
 
 @keyframes appear {

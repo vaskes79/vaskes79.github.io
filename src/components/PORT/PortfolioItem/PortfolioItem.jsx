@@ -12,36 +12,36 @@ class PortfolioItem extends Component {
     isOpen: false
   }
 
-  handleOpenCloseProject = () => {
+  openCloseProject = (e) => {
+    if (e) e.preventDefault();
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
 
   render() {
-    let {title, img, content} = this.props;
+    let {title, img, content} = this.props
+    let {isOpen} = this.state
 
     return(
       <div className="PortfolioItem">
         <img className="PortfolioItem__img"  alt={title} src={img} />
-        <h1 className="PortfolioItem__title" onClick={this.handleOpenCloseProject} >{title}</h1>
-          <CSSTransitionGroup
+        <h1 className="PortfolioItem__title" onClick={this.openCloseProject} >{title}</h1>
+        <CSSTransitionGroup
           transitionName="PortfolioArticle__animation"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={200}
-          >
-        {
-          this.state.isOpen ?
-            <div key={uniqueId('PortfolioArticle_')} className={`PortfolioItem__content ${this.state.isOpen ? 'PortfolioItem__content--open': ''}` }>
-              <header className="PortfolioArticle__header">
-                <CloseBtn actionClose={this.handleOpenCloseProject} />
-              </header>
-              <PortfolioArticle {...content}/>
-            </div>
-          :
-          null
-        }
-          </CSSTransitionGroup>
+          transitionLeaveTimeout={500}
+        >
+          {
+            isOpen ?
+              <div key={uniqueId('PortfolioArticle_')} className="PortfolioItem__content">
+                <header className="PortfolioArticle__header">
+                  <CloseBtn actionClose={this.openCloseProject} />
+                </header>
+                <PortfolioArticle isOpen={isOpen} {...content}/>
+              </div> : null
+          }
+        </CSSTransitionGroup>
       </div>
     )
   }
@@ -54,7 +54,7 @@ PortfolioItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
-  })
+  }),
 }
 
 export default PortfolioItem
