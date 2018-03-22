@@ -39,5 +39,5 @@ class FooterMap extends Component {
 }
 
 export default  GoogleApiWrapper({
-  apiKey: 'AIzaSyD7274AZxXg2kYY5Q5myZVkl4EZCq7Sce0'
+  apiKey: process.env.VPORT_GOOGLE_MAPS_API_KEY
 })(FooterMap)
