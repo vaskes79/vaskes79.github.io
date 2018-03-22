@@ -29,7 +29,7 @@
 
 .Main__header {
   position: sticky;
-  top: 0;
+  top: -20px;
 }
 
 .Main::before {

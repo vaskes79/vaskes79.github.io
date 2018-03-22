@@ -14,7 +14,6 @@ class FilterPortfolio extends Component {
         currentFilter
       })
     }
-
     componentWillReceiveProps(nextPropts) {
       let {filters} = nextPropts;
 
@@ -45,7 +44,7 @@ class FilterPortfolio extends Component {
                       <li
                         id={val}
                         key={val}
-                        className={`FilterPortfolio__itemWrap ${currentFilter === name ? 'FilterPortfolio__itemWrap--active': ''}`}
+                        className={`FilterPortfolio__itemWrap ${currentFilter === val ? 'FilterPortfolio__itemWrap--active': ''}`}
                         data-name={name}
                         onClick={this.openClose}
                       >
@@ -53,7 +52,7 @@ class FilterPortfolio extends Component {
                           data-name={name}
                           data-value={val}
                           data-hover="hover"
-                          className={`FilterPortfolio__item ${currentFilter === name ? 'FilterPortfolio__item--active': ''}`}
+                          className={`FilterPortfolio__item ${currentFilter === val ? 'FilterPortfolio__item--active': ''}`}
                           >{name}
                         </span>
                       </li>

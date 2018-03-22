@@ -104,8 +104,8 @@
   .FilterPortfolio__itemContainer {
     display: flex;
     justify-content: space-between;
-    width: 100px;
-    height: 40px;
+    width: 100%;
+    height: 42px;
   }
   .FilterPortfolio__itemContainer:hover,
   .FilterPortfolio__itemContainer--open {
