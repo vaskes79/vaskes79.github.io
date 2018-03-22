@@ -6,33 +6,14 @@ import './FilterPortfolio.css'
 class FilterPortfolio extends Component {
     state = {
       isOpen: false,
+      filters: this.props.filters,
+      currentFilter: this.props.currentFilter
     }
-    componentWillMount() {
-      const {filters, currentFilter} = this.props;
-      this.setState({
-        filters,
-        currentFilter
-      })
-    }
-    componentWillReceiveProps(nextPropts) {
-      let {filters} = nextPropts;
-
-      if(filters && filters.length > 0 ) {
-        this.setState({
-          filters
-        })
-      }
-    }
-    openClose = (e) => {
-      let currentFilter = e.target.getAttribute('data-value') || 'all';
-      let isOpen = e.target.getAttribute('data-hover') === 'hover' ? false : !this.state.isOpen;
-      this.setState({
-        isOpen,
-      })
-      this.props.changeFilter(currentFilter);
+    openClose = () => {
+      this.setState({isOpen: !this.state.isOpen})
     }
     render() {
-        let {switchFitler, currentFilter} = this.props;
+        let {switchFitler, currentFilter, changeFilter} = this.props;
         let {isOpen} = this.state;
         return (
             <div className="FilterPortfolio">
@@ -45,13 +26,10 @@ class FilterPortfolio extends Component {
                         id={val}
                         key={val}
                         className={`FilterPortfolio__itemWrap ${currentFilter === val ? 'FilterPortfolio__itemWrap--active': ''}`}
-                        data-name={name}
-                        onClick={this.openClose}
+                        onClick={() => changeFilter(val)}
                       >
                         <span
-                          data-name={name}
-                          data-value={val}
-                          data-hover="hover"
+                          onClick={() => changeFilter(val)}
                           className={`FilterPortfolio__item ${currentFilter === val ? 'FilterPortfolio__item--active': ''}`}
                           >{name}
                         </span>
@@ -66,7 +44,8 @@ class FilterPortfolio extends Component {
 }
 
 FilterPortfolio.propTypes = {
-  filters: PropTypes.array.isRequired
+  filters: PropTypes.array.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 }
 
 export default FilterPortfolio;

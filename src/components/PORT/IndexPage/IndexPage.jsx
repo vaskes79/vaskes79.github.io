@@ -58,7 +58,7 @@ class IndexPage extends Component {
   /**
    * handeler for lower components
    */
-  changeFilter = (currentFilter) => {
+  changeFilter = (currentFilter='all') => {
     this.setState({ currentFilter })
   }
   /**
