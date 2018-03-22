@@ -21,6 +21,7 @@ class IndexPage extends Component {
     currentFilter: 'all',
     projects: [],
     resumeOpen: false,
+    mapOpen: false,
     pageOpen: false,
     filters: [],
   }
@@ -69,30 +70,39 @@ class IndexPage extends Component {
       resumeOpen: !this.state.resumeOpen
     })
   }
+  openMap = () => {
+    this.setState({
+      mapOpen: !this.state.mapOpen
+    })
+  }
 
   filterProjects = (filter) => {
     return this.state.projects.filter( item => item.filter === filter);
   }
   showContent = () => {
-    let {projects, filters, currentFilter, resumeOpen, pageOpen} = this.state;
+    let {projects, filters, currentFilter, resumeOpen, pageOpen, mapOpen} = this.state;
     return (
 
         <div key={uniqueId('main_')} className="IndexPage__contentWrap">
           <Header
             openResume={this.openResume}
             isOpen={resumeOpen}  />
-          <Main
-            portfolioData={currentFilter !== 'all' ? this.filterProjects(currentFilter) : projects}
-            filters={filters}
-            currentFilter={currentFilter}
-            onChangeFilter={this.changeFilter}/>
-          <Footer />
+          { mapOpen ?
+              ''
+              :
+            <Main
+              portfolioData={currentFilter !== 'all' ? this.filterProjects(currentFilter) : projects}
+              filters={filters}
+              currentFilter={currentFilter}
+              onChangeFilter={this.changeFilter}/>
+          }
+          <Footer mapIsOpen={mapOpen} handlerMapOpen={this.openMap} />
         </div>
     )
   }
 
   render () {
-    let {loading, resumeOpen} = this.state;
+    let {loading, resumeOpen, mapOpen, pageOpen} = this.state;
     let content = loading ?
       <Preloader key={uniqueId('Preloader_')} />
       :
@@ -101,7 +111,7 @@ class IndexPage extends Component {
     return (
       <div className={`IndexPage`}>
           { resumeOpen ? '' : content}
-          <CSSTransitionGroup
+        <CSSTransitionGroup
           transitionName="resumeAnimation"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}>

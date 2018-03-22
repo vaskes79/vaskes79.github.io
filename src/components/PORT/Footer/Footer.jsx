@@ -7,13 +7,13 @@ import {CONTACT, ADDRESS, MAP} from '../../../data/footerDemoData.json'
 
 import './Footer.css'
 
-const Footer = ({ conatct, address, map }) => {
+const Footer = ({ conatct, address, map, mapIsOpen, handlerMapOpen }) => {
   return (
     <div className="Footer">
       <div className="Footer__container">
         <FooterContact {...conatct}/>
         <FooterAddress {...address}/>
-        <FooterMap {...map}/>
+        <FooterMap isOpen={mapIsOpen} handlerMapOpen={handlerMapOpen} {...map}/>
       </div>
     </div>
   )
@@ -23,6 +23,8 @@ Footer.propTypes = {
   conatct: PropTypes.object,
   address: PropTypes.object,
   map: PropTypes.object,
+  mapIsOpen: PropTypes.bool.isRequired,
+  handlerMapOpen: PropTypes.func.isRequired,
 }
 
 Footer.defaultProps = {
