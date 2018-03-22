@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import './PortfolioArticle.css'
 
 
@@ -25,7 +26,10 @@ class PortfolioArticle extends Component {
       <article className={`PortfolioArticle ${isOpen ? 'PortfolioArticle--open' : ''}`}>
         <div className="PortfolioArticle__img" style={{backgroundImage: `url(${img})` }}></div>
         <div className="PortfolioArticle__descriptionConatiner">
-          <h1 className="PortfolioArticle__title">{title}</h1>
+          <h1 className="PortfolioArticle__title">
+            {title}
+            <Link className="PortfolioArticle__link" to="/projects/DemoProject1">→ open project</Link>
+          </h1>
           <div className="PortfolioArticle__description">{description}</div>
         </div>
       </article>

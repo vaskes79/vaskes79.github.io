@@ -68,6 +68,20 @@
   opacity: 1;
 }
 
+.PortfolioArticle__link {
+  display: block;
+  width: 100%;
+  color: rgb(153, 152, 99);
+  text-decoration: none;
+  font-size: .5em;
+  font-weight: 100;
+  text-indent: 0;
+  transition: color 0.2s ease-in-out;
+}
+.PortfolioArticle__link:hover {
+  color: rgb(234, 233, 153);
+}
+
 /*
 anamiation classes for css-transition-group
 */
