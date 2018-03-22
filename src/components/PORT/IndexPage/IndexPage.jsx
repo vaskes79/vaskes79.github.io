@@ -105,7 +105,7 @@ class IndexPage extends Component {
           transitionName="resumeAnimation"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}>
-          { resumeOpen ? <Resume key={uniqueId('Preloader_')} closeHandler={this.openResume} /> : '' }
+          { resumeOpen ? <Resume key={uniqueId('Preloader_')} isOpen={true} closeHandler={this.openResume} /> : '' }
         </CSSTransitionGroup>
       </div>
     )

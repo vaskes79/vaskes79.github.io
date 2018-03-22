@@ -3,15 +3,14 @@ import PropTypes from 'prop-types'
 import CloseBtn from '../CloseBtn'
 import './Resume.css'
 
-const Resume = ({closeHandler}) => {
-
+const Resume = ({closeHandler, isOpen=false}) => {
   return (
-    <section className="Resume">
+    <section className={`Resume ${ isOpen ? 'Resume--open' : ''}`}>
       <header className="Resume__header">
         <CloseBtn actionClose={closeHandler} />
       </header>
       <div className="Resume__container">
-        <article className="Resume__part">
+        <article className="Resume__part" style={{animationDelay: '200ms'}}>
           <h2 className="Resume__title">
             personal info
           </h2>
@@ -61,7 +60,7 @@ const Resume = ({closeHandler}) => {
         </article>
 
 
-        <article className="Resume__part">
+        <article className="Resume__part" style={{animationDelay: '400ms'}}>
           <h2 className="Resume__title">
             skills
           </h2>
@@ -94,7 +93,7 @@ const Resume = ({closeHandler}) => {
         </article>
 
 
-        <article className="Resume__part">
+        <article className="Resume__part" style={{animationDelay: '600ms'}}>
           <h2 className="Resume__title">
             experinece
           </h2>
@@ -115,7 +114,7 @@ const Resume = ({closeHandler}) => {
           </div>
         </article>
 
-        <article className="Resume__part">
+        <article className="Resume__part" style={{animationDelay: '800ms'}}>
           <h2 className="Resume__title">
             education
           </h2>
@@ -147,6 +146,7 @@ const Resume = ({closeHandler}) => {
 
 Resume.propTypes = {
   closeHandler: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 }
 
 export default Resume

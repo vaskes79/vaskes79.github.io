@@ -26,6 +26,11 @@
 .Resume__part {
   margin-top: 2.6em;
   flex-basis: 400px;
+  opacity: 0;
+}
+
+.Resume--open .Resume__part {
+  animation: resumePartAppear 500ms ease-in 500ms forwards;
 }
 
 .Resume__partCategory {
@@ -83,4 +88,40 @@
 .Resume__info {
   color: rgba(255, 255, 255, .5);
   max-width: 340px;
+}
+
+@keyframes resumePartAppear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: .2;
+  }
+  20% {
+    opacity: .4;
+  }
+  25% {
+    opacity: .1;
+  }
+  30% {
+    opacity: .5;
+  }
+  35% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .6;
+  }
+  70% {
+    opacity: .4;
+  }
+  90% {
+    opacity: .8;
+  }
+  95% {
+    opacity: .6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
