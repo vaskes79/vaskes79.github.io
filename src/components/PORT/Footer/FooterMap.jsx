@@ -16,6 +16,15 @@ class FooterMap extends Component {
     this.setState({
       mapIsOpen: !this.state.mapIsOpen
     })
+    this.stopScroll();
+  }
+  stopScroll = () => {
+    let html = document.querySelector('html');
+    if(!this.state.mapIsOpen) {
+      html.style.overflowY = 'hidden'
+    } else {
+      html.style.overflowY = 'auto'
+    }
   }
 
   render () {
