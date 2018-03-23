@@ -8,6 +8,10 @@
     margin: 0 auto;
 }
 
+.FilterPortfolio--open{
+  height: auto;
+}
+
 .FilterPortfolio__title {
     position: relative;
     font-family: 'Museo300-Regular', Helvetica, sans-serif;
@@ -18,6 +22,7 @@
     background: rgba(234, 233, 153, .9);
     line-height: 42px;
     min-width: 130px;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -47,7 +52,9 @@
 
 .FilterPortfolio__itemWrap {
     position: relative;
+    padding-left: 10px;
     left: 500vw;
+    margin: 0;
     list-style: none;
     max-width: 200px;
     text-align: left;

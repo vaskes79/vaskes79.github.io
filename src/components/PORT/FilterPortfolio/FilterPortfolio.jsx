@@ -19,7 +19,7 @@ class FilterPortfolio extends Component {
         let {switchFitler, currentFilter, changeFilter} = this.props;
         let {isOpen} = this.state;
         return (
-            <div className="FilterPortfolio">
+            <div className={`FilterPortfolio ${isOpen? 'FilterPortfolio--open' : ''}`}>
               <h2 className="FilterPortfolio__title" onClick={this.openClose}>filter by → </h2>
               <ul className={`FilterPortfolio__itemContainer ${isOpen ? 'FilterPortfolio__itemContainer--open':''}`}>
                 {
