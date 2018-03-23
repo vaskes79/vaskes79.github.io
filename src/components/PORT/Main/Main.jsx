@@ -42,7 +42,7 @@ class Main extends Component {
       const {title, img, content, _id} = portfolioItem
       return (
         <CSSTransitionGroup
-          transitionName="example"
+          transitionName="PortfolioItemAnimation"
           transitionEnterTimeout={this.getRandomArbitrary(500, 1000)}
           transitionLeaveTimeout={this.getRandomArbitrary(200, 500)}
           >

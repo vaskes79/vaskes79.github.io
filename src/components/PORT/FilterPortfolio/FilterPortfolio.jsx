@@ -12,6 +12,9 @@ class FilterPortfolio extends Component {
     openClose = () => {
       this.setState({isOpen: !this.state.isOpen})
     }
+    getRandomArbitrary = (min, max) =>{
+      return Math.random() * (max - min) + min;
+    }
     render() {
         let {switchFitler, currentFilter, changeFilter} = this.props;
         let {isOpen} = this.state;

@@ -47,23 +47,23 @@
 /*
 anamiation classes for css-transition-group
 */
-.example-enter {
+.PortfolioItemAnimation-enter {
   opacity: 0.01;
   transform: scale(0) rotate(180deg);
 }
 
-.example-enter.example-enter-active {
+.PortfolioItemAnimation-enter.PortfolioItemAnimation-enter-active {
   opacity: 1;
   transform: scale(1) rotate(0deg);
   transition: all 1000ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
 }
 
-.example-leave {
+.PortfolioItemAnimation-leave {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
 
-.example-leave.example-leave-active {
+.PortfolioItemAnimation-leave.PortfolioItemAnimation-leave-active {
   opacity: 0.01;
   transform: scale(0) rotate(-360deg);
   transition: all 500ms cubic-bezier(0.470, 0.000, 0.745, 0.715);;
