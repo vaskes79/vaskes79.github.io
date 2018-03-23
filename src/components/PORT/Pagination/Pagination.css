@@ -1,1 +1,21 @@
 .Pagination {}
+
+.Pagination__handler {
+  text-decoration: none;
+  text-transform: lowercase;
+  color: rgb(29, 29, 29);
+  transition: color 0.1s ease-in-out;
+  margin: 0 10px;
+}
+
+.Pagination__handler:hover {
+  color: rgba(29, 29, 29, .4);
+}
+.Pagination__handler--disable {
+  color: rgba(29, 29, 29, .3);
+  cursor: none;
+}
+
+.Pagination__handlerSeparate {
+  color: rgba(29, 29, 29, .4);
+}

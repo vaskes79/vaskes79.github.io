@@ -81,7 +81,7 @@ class Pagination extends Component {
 
   render() {
     let {pager} = this.state;
-    let {currentPage, totalPages} = pager
+    let {currentPage, totalPages} = pager;
     if (!pager.pages || pager.pages.length <= 1) return null;
     return (
       <div className="Pagination">
@@ -89,7 +89,7 @@ class Pagination extends Component {
           className={`Pagination__handler Pagination__handlerPrev ${currentPage === 1 ? 'Pagination__handler--disable': ''}`}
           onClick={(e) => {e.preventDefault(); return this.setPage(currentPage - 1)}}
           >prev</a>
-        <i> | </i>
+        <b className="Pagination__handlerSeparate"> | </b>
         <a href="next"
           className={`Pagination__handler Pagination__handlerNext ${currentPage === totalPages ? 'Pagination__handler--disable': ''}`}
           onClick={(e) => {e.preventDefault(); return this.setPage(currentPage + 1)}}
