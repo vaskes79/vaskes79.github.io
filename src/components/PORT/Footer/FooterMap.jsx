@@ -52,7 +52,7 @@ FooterMap.propTypes = {
   isOpen: PropTypes.bool.isRequired,
 }
 
-
-export default  GoogleApiWrapper({
+// fix problem with this wrapper warning setState in console
+export default GoogleApiWrapper({
   apiKey: process.env.VPORT_GOOGLE_MAPS_API_KEY
 })(FooterMap)

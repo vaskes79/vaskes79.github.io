@@ -1,0 +1,77 @@
+.PortfolioArticle {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  color: rgba(233, 235, 232, .9);
+  background: rgb(32, 32, 32);
+}
+
+.PortfolioArticle__header {
+  position: fixed;
+  right: 5%;
+  height: 50px;
+  padding: 10px;
+  background: rgba(29,26, 26, .8);
+  text-align: right;
+  z-index: 10;
+}
+
+.PortfolioArticle__img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40vh;
+  transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+  transition-delay: 500ms;
+}
+
+.PortfolioArticle__descriptionConatiner {
+  width: 100%;
+}
+
+.PortfolioArticle__title,
+.PortfolioArticle__description {
+  width: 100%;
+  max-width: 640px;
+  text-align: left;
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+}
+
+.PortfolioArticle__title {
+  transform-origin: top center;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  transition-delay: 200ms;
+}
+
+.PortfolioArticle__description {
+  margin-left: 100%;
+  transition-delay: 800ms;
+  opacity: 0;
+}
+
+.PortfolioArticle__link {
+  display: block;
+  width: 100%;
+  color: rgb(153, 152, 99);
+  text-decoration: none;
+  font-size: .5em;
+  font-weight: 100;
+  text-indent: 0;
+  transition: color 0.2s ease-in-out;
+}
+.PortfolioArticle__link:hover {
+  color: rgb(234, 233, 153);
+}
+/* Animation styles */
+
+.PortfolioArticle--open .PortfolioArticle__title,
+.PortfolioArticle--open .PortfolioArticle__description {
+  margin-left: 5%;
+  transform: rotateX(0deg);
+  opacity: 1;
+}
