@@ -13,6 +13,11 @@ html, body {
   animation: appear .5s cubic-bezier(0.550, 0.055, 0.675, 0.190) /* easeInCubic */ 1s forwards;
 }
 
+.IndexPage__wrap {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
 @keyframes appear {
   0% {
     opacity: 0;

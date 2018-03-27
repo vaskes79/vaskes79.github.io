@@ -1,0 +1,100 @@
+/* next state */
+/* readMore state */
+/* ----------------------------------------------------------------- */
+.PaginationBtn,
+.PaginationBtnPrev {
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  color: rgba(234, 233, 153, .8);
+  cursor: pointer;
+  padding: 0 10px;
+  transition: all 200ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
+  box-shadow: rgb(29, 26, 26);
+}
+
+.PaginationBtn__text,
+.PaginationBtnPrev__text {
+  position: relative;
+  top: 0;
+  height: 30px;
+  padding: 0 10px;
+  display: block;
+  background: rgb(29, 26, 26);
+}
+
+.PaginationBtn__text {
+  left: 5px;
+}
+
+.PaginationBtn::before,
+.PaginationBtnPrev::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  border-bottom: 15px solid rgb(153, 152, 99);
+}
+
+.PaginationBtn::before {
+  left: 0;
+  border-left: 15px solid transparent;
+}
+
+.PaginationBtn::after,
+.PaginationBtnPrev::after {
+  display: block;
+  position: absolute;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  content: '';
+  background: rgb(29, 26, 26);
+}
+
+.PaginationBtn::after {
+  left: 0;
+}
+
+.PaginationBtn:hover,
+.PaginationBtnPrev:hover {
+  background: rgba(29, 26, 26);
+}
+
+.PaginationBtn:hover::before,
+.PaginationBtnPrev:hover::before {
+  border-bottom: 15px solid rgb(29, 26, 26);
+}
+
+.PaginationBtn--disable,
+.PaginationBtnPrev--disable {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.PaginationBtn--disable:hover,
+.PaginationBtnPrev--disable:hover {
+  background: none;
+}
+.PaginationBtn--disable:hover::before,
+.PaginationBtnPrev--disable:hover::before {
+  border-bottom: 15px solid rgb(153, 152, 99);
+}
+
+/* prev state */
+/* ----------------------------------------------------------------- */
+
+.PaginationBtnPrev__text{
+  right: 5px;
+}
+.PaginationBtnPrev::before {
+  right: 0;
+  border-right: 15px solid transparent;
+}
+
+.PaginationBtnPrev::after {
+  right: 0;
+}

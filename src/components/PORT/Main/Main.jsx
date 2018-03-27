@@ -5,6 +5,7 @@ import {uniqueId} from 'lodash'
 // import Pagination from '../Pagination'
 import FilterPortfolio from '../FilterPortfolio'
 import PortfolioItem from '../PortfolioItem'
+import {PaginationBtn} from '../Pagination'
 import './Main.css'
 
 import DEMO_FILTERS from '../../../data/filtersDemoData.json'
@@ -34,7 +35,8 @@ class Main extends Component {
           }
         </div>
         <footer className="Main__footer">
-          <h1>footer</h1>
+          <PaginationBtn text="previos" type="prev" disable={true} />
+          <PaginationBtn text="next" type="next" disable={false} />
         </footer>
       </section>
     )

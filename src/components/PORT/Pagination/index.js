@@ -1,3 +1,4 @@
 import Pagination from './Pagination.jsx'
-export default Pagination;
-    
+import PaginationBtn from './PaginationBtn'
+export {PaginationBtn}
+export default Pagination
