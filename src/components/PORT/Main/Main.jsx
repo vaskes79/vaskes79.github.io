@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import {uniqueId} from 'lodash'
 
 // import Pagination from '../Pagination'
 import FilterPortfolio from '../FilterPortfolio'
@@ -7,6 +8,7 @@ import PortfolioItem from '../PortfolioItem'
 import './Main.css'
 
 import DEMO_FILTERS from '../../../data/filtersDemoData.json'
+import DEMO_IMAGES from '../../../data/demoImages.json'
 
 class Main extends Component {
 
@@ -21,26 +23,15 @@ class Main extends Component {
             handleFilter={() => console.log('handle filters on main is working')}/>
         </header>
         <div className="Main__container">
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
-          <PortfolioItem title="Name project" img="https://placeimg.com/640/480/tech" handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
+          {
+            DEMO_IMAGES.map( img => (
+              <PortfolioItem
+                key={uniqueId('PortfolioItemImg_')}
+                title="Name project"
+                img={`/static/demoImg/${img}`}
+                handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
+            ))
+          }
         </div>
         <footer className="Main__footer">
           <h1>footer</h1>

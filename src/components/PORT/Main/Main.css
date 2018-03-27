@@ -5,6 +5,7 @@
   width: 100%;
   min-height: 92vh;
   padding-bottom: 100px;
+  padding-top: 35px;
   text-align: center;
 }
 
@@ -21,13 +22,10 @@
 }
 
 .Main__header, .Main__footer {
-  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  width: 78%;
   min-height: 100px;
-}
-
-.Main__header {
-  position: sticky;
-  top: -20px;
 }
 
 .Main__container {

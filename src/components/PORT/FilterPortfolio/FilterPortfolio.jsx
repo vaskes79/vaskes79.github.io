@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {uniqueId} from 'lodash'
 import './FilterPortfolio.css'
 
-
 const FilterPortfolio = ({handleFilter, filters, currentFilter, isOpen}) => {
   return (
     <div className={`FilterPortfolio ${isOpen ? 'FilterPortfolio--open':''}`}>
