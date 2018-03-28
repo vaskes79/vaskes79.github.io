@@ -19,7 +19,7 @@ const Header = ({title, subTitle, handleOpenResume}) => {
         </h1>
 
         <p className="Header__bio">Hi! My name is Vasily Guzov. I'm a profesional actor and amauter photographer. Here you will find my reflections aboute life, my photo works as well as some photos with me. Thanks for watching.</p>
-        <i onClick={handleOpenResume} className="Header__resumeBtn">resume</i>
+        <i onClick={handleOpenResume} className="Header__resumeBtn">resume →</i>
       </div>
     </header>
   )
