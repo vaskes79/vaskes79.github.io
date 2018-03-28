@@ -23,18 +23,15 @@ class IndexPage extends Component {
   render () {
     return (
       <div className="IndexPage">
-        <Preloader />
-        {/* <Resume closeHandler={() => console.log('close handler resume is workign on resume')} isOpen={true}/> */}
+        {/* <Preloader /> */}
+        <Resume closeHandler={() => console.log('close handler resume is workign on resume')} isOpen={true}/>
         {/* <PortfolioArticle /> */}
-        {/* <Map
-          coordinate={MAP.coordinate}
-          isOpen={true}
-          handleMap={() => console.log("handleMap is working")} /> */}
-        {/* <div className="IndexPage__wrap">
-          <Header title="web portfolio" subTitle="vasily Guzov" handleOpenResume={() => console.log('handle open resume is working on header')}/>
-          <Main />
-          <Footer />
-        </div> */}
+        {/* <Map coordinate={MAP.coordinate} isOpen={true} handleMap={() => console.log("handleMap is working")} /> */}
+        <div className="IndexPage__wrap">
+          {/* <Header title="web portfolio" subTitle="vasily Guzov" handleOpenResume={() => console.log('handle open resume is working on header')}/> */}
+          {/* <Main /> */}
+          {/* <Footer /> */}
+        </div>
       </div>
     )
   }

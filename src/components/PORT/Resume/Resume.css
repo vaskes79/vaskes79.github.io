@@ -9,7 +9,6 @@
   opacity: 1;
 }
 
-
 .Resume__header, .Resume__footer {
   position: relative;
   text-align: right;
@@ -20,107 +19,4 @@
 .Resume__container {
   display: flex;
   flex-wrap: wrap;
-}
-
-.Resume__part {
-  margin-top: 2.6em;
-  flex-basis: 400px;
-  opacity: 0;
-}
-
-.Resume--open .Resume__part {
-  animation: resumePartAppear 500ms ease-in 500ms forwards;
-}
-
-.Resume__partCategory {
-  display: flex;
-}
-
-.Resume__partCategoryContentItem {
-  color: rgba(255, 255, 255, .8);
-  list-style: none;
-  margin: 0;
-}
-
-.Resume__title {
-  font-size: 2.6em;
-  font-weight: 200;
-  font-family: 'Museo300-Regular', Helvetica, sans-serif;
-  color: rgba(255, 255, 255, .8);
-  text-transform: capitalize;
-}
-
-.Resume__subTitle {
-  font-size: 1.3em;
-  font-weight: 200;
-  line-height: 1.3em;
-  font-family: 'Museo300-Regular', Helvetica, sans-serif;
-  color: rgba(255, 255, 255, .8);
-  text-transform: capitalize;
-}
-
-.Resume__link {
-  color: rgb(153, 152, 99);
-  text-decoration: none;
-  text-transform: lowercase;
-  transition: color 0.1s ease-in-out;
-}
-
-.Resume__link:hover {
-  color: rgb(234, 233, 153);
-}
-
-.Resume__category {
-  font-weight: 400;
-  text-transform: capitalize;
-  font-size: 0.875em;
-  color: rgba(255, 255, 255, .4);
-}
-
-.Resume__year {
-  font-weight: 100;
-  text-transform: capitalize;
-  font-size: 0.875em;
-  color: rgba(255, 255, 255, .4);
-}
-
-.Resume__info {
-  color: rgba(255, 255, 255, .5);
-  max-width: 340px;
-}
-
-@keyframes resumePartAppear {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: .2;
-  }
-  20% {
-    opacity: .4;
-  }
-  25% {
-    opacity: .1;
-  }
-  30% {
-    opacity: .5;
-  }
-  35% {
-    opacity: .2;
-  }
-  50% {
-    opacity: .6;
-  }
-  70% {
-    opacity: .4;
-  }
-  90% {
-    opacity: .8;
-  }
-  95% {
-    opacity: .6;
-  }
-  100% {
-    opacity: 1;
-  }
 }
