@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {range} from 'lodash'
 import PropTypes from 'prop-types'
+import PaginationBtn from './PaginationBtn'
 import './Pagination.css'
 
 
@@ -85,15 +86,16 @@ class Pagination extends Component {
     if (!pager.pages || pager.pages.length <= 1) return null;
     return (
       <div className="Pagination">
-        <a href="prev"
-          className={`Pagination__handler Pagination__handlerPrev ${currentPage === 1 ? 'Pagination__handler--disable': ''}`}
-          onClick={(e) => {e.preventDefault(); return this.setPage(currentPage - 1)}}
-          >prev</a>
-        <b className="Pagination__handlerSeparate"> | </b>
-        <a href="next"
-          className={`Pagination__handler Pagination__handlerNext ${currentPage === totalPages ? 'Pagination__handler--disable': ''}`}
-          onClick={(e) => {e.preventDefault(); return this.setPage(currentPage + 1)}}
-          >next</a>
+        <PaginationBtn
+          text="previos"
+          type="prev"
+          disable={currentPage === 1}
+          handleChangePage={() => this.setPage(currentPage - 1)} />
+        <PaginationBtn
+          text="next"
+          type="next"
+          disable={currentPage === totalPages}
+          handleChangePage={() => this.setPage(currentPage + 1)} />
       </div>
     )
   }
