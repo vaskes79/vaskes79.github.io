@@ -15,7 +15,7 @@ const FilterPortfolio = ({handleFilter, filters, currentFilter, isOpen}) => {
               style={{transitionDelay: `${500 * i}px`}}
               className={`FilterPortfolio__itemWrap ${currentFilter === val ? 'FilterPortfolio__itemWrap--active': ''}`} >
               <span
-                onClick={handleFilter}
+                onClick={() => handleFilter(val)}
                 style={{transitionDelay: `${500 * i}px`}}
                 className={`FilterPortfolio__item ${currentFilter === val ? 'FilterPortfolio__item--active': ''}`} >
                 {name}

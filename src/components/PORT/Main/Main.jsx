@@ -20,7 +20,7 @@ class Main extends Component {
   }
 
 	render() {
-    let {filters, portfolioItems, handleOpenArticle, handleFilter} = this.props
+    let {filters, portfolioItems, handleOpenArticle, handleFilter, currentFilter} = this.props
     let {pageOfItems} = this.state
     return (
       <section className="Main">
@@ -28,7 +28,7 @@ class Main extends Component {
           <FilterPortfolio
             isOpen={false}
             filters={filters}
-            currentFilter={'all'}
+            currentFilter={currentFilter}
             handleFilter={handleFilter}/>
         </header>
         <div className="Main__container">
@@ -57,6 +57,7 @@ Main.propTypes = {
   portfolioItems: PropTypes.array.isRequired,
   handleOpenArticle: PropTypes.func.isRequired,
   handleFilter: PropTypes.func.isRequired,
+  currentFilter: PropTypes.string.isRequired,
 }
 
 export default Main

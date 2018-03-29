@@ -20,6 +20,13 @@ import './IndexPage.css'
 
 class IndexPage extends Component {
   state = {
+    portfolioItems: [],
+    filteredItems: [],
+    filters: [],
+    mapData: {},
+    resumeData: {},
+    headerData: {},
+    currentFilter: 'all',
     article: false,
     loading: true,
     openResume: false,
@@ -69,8 +76,17 @@ class IndexPage extends Component {
     })
   }
 
+  filteringItems = () => {
+    let {portfolioItems, currentFilter} = this.state;
+    return portfolioItems.filter( item => item.filter === currentFilter);
+  }
+
+  changeFilter = (filter) => {
+    this.setState({currentFilter: filter})
+  }
+
   render () {
-    let {article, loading, openResume, openMap, portfolioItems, filters, resumeData, headerData, footerData, mapData} = this.state;
+    let {article, loading, openResume, openMap, portfolioItems, filters, resumeData, headerData, footerData, mapData, filteredItems, currentFilter} = this.state;
     const RESUME_PROPS = {
       content: resumeData,
       isOpen: openResume,
@@ -91,9 +107,10 @@ class IndexPage extends Component {
     }
     let MAIN_PROPS = {
       filters,
-      portfolioItems,
+      currentFilter,
+      portfolioItems: currentFilter !== 'all' ? this.filteringItems() : portfolioItems,
       handleOpenArticle: this.handleOpenArticle,
-      handleFilter: () => console.log(`handleFilter on IndexPage is working`)
+      handleFilter: this.changeFilter
     }
     const FOOTER_DATA = {
       ...footerData,
