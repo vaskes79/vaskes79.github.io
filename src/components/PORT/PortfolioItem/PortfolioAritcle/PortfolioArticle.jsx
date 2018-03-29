@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import CloseBtn from '../../CloseBtn'
 import './PortfolioArticle.css'
 
-const PortfolioArticle = ({img, title, description}) => {
+const PortfolioArticle = ({img, title, description, url}) => {
 
   return (
     <article className="PortfolioArticle PortfolioArticle--open">
@@ -15,7 +15,7 @@ const PortfolioArticle = ({img, title, description}) => {
       <div className="PortfolioArticle__descriptionConatiner">
         <h1 className="PortfolioArticle__title">
           {title}
-          <Link className="PortfolioArticle__link" to="/projects/DemoProject1">→ open project</Link>
+          <Link className="PortfolioArticle__link" to={`/projects/${url}`}>→ open project</Link>
         </h1>
         <div className="PortfolioArticle__description">{description}</div>
       </div>
@@ -24,9 +24,10 @@ const PortfolioArticle = ({img, title, description}) => {
 }
 
 PortfolioArticle.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  img: PropTypes.string,
+  url: PropTypes.string,
 }
 
 export default PortfolioArticle

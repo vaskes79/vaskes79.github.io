@@ -20,7 +20,7 @@ class Main extends Component {
   }
 
 	render() {
-    let {filters, portfolioItems, handlePortfolioArticle, handleFilter} = this.props
+    let {filters, portfolioItems, handleOpenArticle, handleFilter} = this.props
     let {pageOfItems} = this.state
     return (
       <section className="Main">
@@ -34,12 +34,11 @@ class Main extends Component {
         <div className="Main__container">
           {
             pageOfItems && pageOfItems.length > 0 ?
-            pageOfItems.map( img => (
+            pageOfItems.map( item => (
               <PortfolioItem
-                key={uniqueId('PortfolioItemImg_')}
-                title="Name project"
-                img={`/static/demoImg/${img}`}
-                handleOpenPortfolioArticle={handlePortfolioArticle} />
+                key={item._id}
+                {...item}
+                handleOpenArticle={handleOpenArticle} />
             ))
             :
             <Preloader />
@@ -56,7 +55,7 @@ class Main extends Component {
 Main.propTypes = {
   filters: PropTypes.array.isRequired,
   portfolioItems: PropTypes.array.isRequired,
-  handlePortfolioArticle: PropTypes.func.isRequired,
+  handleOpenArticle: PropTypes.func.isRequired,
   handleFilter: PropTypes.func.isRequired,
 }
 
