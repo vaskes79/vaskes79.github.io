@@ -1,15 +1,15 @@
 {
-  "CONTACT": {
+  "contact": {
     "title": "stay in touch",
     "mesanger": "skype: vaskes79",
     "email": "kinev1979@gmail.com",
     "phone": "+79112124127"
   },
-  "ADDRESS": {
+  "address": {
     "title": "you can find me",
     "address": "my location addres and differen info"
   },
-  "MAP": {
+  "map": {
     "title": "my location on maps",
     "coordinate": {
       "center": {

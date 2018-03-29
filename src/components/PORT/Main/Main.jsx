@@ -8,29 +8,27 @@ import PortfolioItem from '../PortfolioItem'
 import {PaginationBtn} from '../Pagination'
 import './Main.css'
 
-import DEMO_FILTERS from '../../../data/filtersDemoData.json'
-import DEMO_IMAGES from '../../../data/demoImages.json'
 
 class Main extends Component {
-
 	render() {
+    let {filters, portfolioItems, handlePortfolioArticle, handleFilter} = this.props
     return (
       <section className="Main">
         <header className="Main__header">
           <FilterPortfolio
             isOpen={false}
-            filters={DEMO_FILTERS}
+            filters={filters}
             currentFilter={'all'}
-            handleFilter={() => console.log('handle filters on main is working')}/>
+            handleFilter={handleFilter}/>
         </header>
         <div className="Main__container">
           {
-            DEMO_IMAGES.map( img => (
+            portfolioItems.map( img => (
               <PortfolioItem
                 key={uniqueId('PortfolioItemImg_')}
                 title="Name project"
                 img={`/static/demoImg/${img}`}
-                handleOpenPortfolioArticle={() => console.log('handle portfolio article opne on main is working')} />
+                handleOpenPortfolioArticle={handlePortfolioArticle} />
             ))
           }
         </div>
@@ -44,6 +42,10 @@ class Main extends Component {
 }
 
 Main.propTypes = {
+  filters: PropTypes.array.isRequired,
+  portfolioItems: PropTypes.array.isRequired,
+  handlePortfolioArticle: PropTypes.func.isRequired,
+  handleFilter: PropTypes.func.isRequired,
 }
 
 export default Main
