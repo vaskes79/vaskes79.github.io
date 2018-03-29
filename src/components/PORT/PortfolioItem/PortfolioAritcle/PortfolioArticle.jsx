@@ -4,12 +4,12 @@ import Link from 'gatsby-link'
 import CloseBtn from '../../CloseBtn'
 import './PortfolioArticle.css'
 
-const PortfolioArticle = ({img, title, description, url}) => {
+const PortfolioArticle = ({img, title, description, url, closeHandler}) => {
 
   return (
     <article className="PortfolioArticle PortfolioArticle--open">
       <header className="PortfolioArticle__header">
-        <CloseBtn actionClose={() => console.log('PoftfolioArtilcle handler is working')} />
+        <CloseBtn actionClose={closeHandler} />
       </header>
       <div className="PortfolioArticle__img" style={{backgroundImage: `url(${img})` }}></div>
       <div className="PortfolioArticle__descriptionConatiner">
@@ -28,6 +28,7 @@ PortfolioArticle.propTypes = {
   description: PropTypes.string,
   img: PropTypes.string,
   url: PropTypes.string,
+  closeHandler: PropTypes.func.isRequired,
 }
 
 export default PortfolioArticle

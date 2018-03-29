@@ -63,35 +63,48 @@ class IndexPage extends Component {
     this.setState({article});
   }
 
+  handleOpenClose = (element) => {
+    this.setState({
+      [element]: !this.state[element]
+    })
+  }
+
   render () {
     let {article, loading, openResume, openMap, portfolioItems, filters, resumeData, headerData, footerData, mapData} = this.state;
+    const RESUME_PROPS = {
+      content: resumeData,
+      isOpen: openResume,
+      closeHandler: () => this.handleOpenClose('openResume')
+    }
+    const MAP_PROPS = {
+      ...mapData,
+      isOpen: openMap,
+      closeHandler: () => this.handleOpenClose('openMap'),
+    }
+    const ARTICLE_PROPS ={
+      ...article,
+      closeHandler: () => this.handleOpenClose('article'),
+    }
+    const HEADE_PROPS = {
+      ...headerData,
+      handleOpenResume: () => this.handleOpenClose('openResume')
+    }
     let MAIN_PROPS = {
       filters,
       portfolioItems,
       handleOpenArticle: this.handleOpenArticle,
       handleFilter: () => console.log(`handleFilter on IndexPage is working`)
     }
-    const HEADE_PROPS = {
-      ...headerData,
-      handleOpenResume: () => console.log('handle open resume is working on header')
+    const FOOTER_DATA = {
+      ...footerData,
+      handleOpenMap: () => this.handleOpenClose('openMap')
     }
-    const RESUME_PROPS = {
-      content: resumeData,
-      isOpen: openResume,
-      closeHandler: () => console.log('close handler resume is workign on resume')
-    }
-    const MAP_PROPS = {
-      ...mapData,
-      isOpen: openMap,
-      handleMap: () => console.log('handleMap on indexPage is working')
-    }
-    const FOOTER_DATA = { ...footerData }
     return (
       <div className="IndexPage">
         {loading    ? <Preloader /> : ''}
         {openResume ? <Resume {...RESUME_PROPS} /> : '' }
         {openMap    ? <Map {...MAP_PROPS} /> : ''}
-        {article    ? <PortfolioArticle {...article} /> : '' }
+        {article    ? <PortfolioArticle {...ARTICLE_PROPS} /> : '' }
 
         {
           loading || openResume || openMap || article ?

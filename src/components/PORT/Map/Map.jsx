@@ -6,12 +6,12 @@ import MapContainer from './MapContainer'
 
 import './Map.css'
 
-const Map = ({coordinate, google, isOpen, handleMap}) => {
+const Map = ({coordinate, google, isOpen, closeHandler}) => {
   return (
     <div className="FooterMap">
       <div className={`FooterMap__mapContainer ${isOpen ? 'FooterMap__mapContainer--open' : ''}`}>
         <div className="FooterMap__mapContainerHeader">
-          <CloseBtn actionClose={handleMap} />
+          <CloseBtn actionClose={closeHandler} />
         </div>
         <MapContainer google={google} coordinate={coordinate} />
       </div>
@@ -21,8 +21,8 @@ const Map = ({coordinate, google, isOpen, handleMap}) => {
 
 Map.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  handleMap: PropTypes.func.isRequired,
   coordinate: PropTypes.object.isRequired,
+  closeHandler: PropTypes.func.isRequired,
 }
 
 export default GoogleApiWrapper({
