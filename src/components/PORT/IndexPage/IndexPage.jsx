@@ -1,10 +1,7 @@
-// for dev
-import {DEMO_FOOTER_DATA, DEMO_HEADER_DATA, DEMO_RESUME_DATA, DEMO_FILTERS, DEMO_PORTFOLIO_ITEMS} from '../../../data'
-// end dev
 import React, {Component} from 'react'
 import {uniqueId} from 'lodash'
 // import db modules
-// import {DB as db} from '../../../data/firebase'
+import {getDataOnce} from '../../../data/firebase'
 // import compones
 import Preloader from '../Preloader'
 import Resume from '../Resume'
@@ -37,36 +34,35 @@ class IndexPage extends Component {
     this.getData()
   }
 
-  getData = () => {
-    // let portfolioItemsCheck = DEMO_PORTFOLIO_ITEMS.length && DEMO_PORTFOLIO_ITEMS.length > 0;
-    // let filtersCheck = DEMO_FILTERS.length && DEMO_FILTERS.length > 0;
-    // let footerCheck = DEMO_FOOTER_DATA.contact && DEMO_FOOTER_DATA.address && DEMO_FOOTER_DATA.map;
-    // let resumeCheck = DEMO_RESUME_DATA.length && DEMO_RESUME_DATA.length > 4;
-    // let headerCheck = DEMO_HEADER_DATA.textIntro && DEMO_HEADER_DATA.title && DEMO_HEADER_DATA.subTutle;
-    // let loaded = portfolioItemsCheck && filtersCheck && footerCheck && resumeCheck && headerCheck;
+  async getData() {
     let loaded = true;
+    let portfolioItems = await getDataOnce('projects');
+    let filters = await getDataOnce('filters');
+    let resumeData = await getDataOnce('resume');
+    let headerData = await getDataOnce('header');
+    let footerData = await getDataOnce('footer');
+    let loading = portfolioItems && filters && resumeData && headerData && footerData ? false : true;
 
     if (loaded) {
       this.setState({
-        portfolioItems: DEMO_PORTFOLIO_ITEMS,
-        filters: DEMO_FILTERS,
-        resumeData: DEMO_RESUME_DATA,
-        headerData: DEMO_HEADER_DATA,
-        footerData: DEMO_FOOTER_DATA,
-        mapData: DEMO_FOOTER_DATA.map,
-        loading: false
+        portfolioItems,
+        filters,
+        resumeData,
+        headerData,
+        footerData,
+        mapData: footerData.map,
+        loading,
       })
     } else {
       this.setState({
         loading: true,
       })
     }
-
   }
 
   handleOpenArticle = (articleId) => {
     console.log(`article id: ${articleId}`);
-    let article = DEMO_PORTFOLIO_ITEMS.filter( item => item._id === articleId)[0].content;
+    let article = this.state.portfolioItems.filter( item => item._id === articleId)[0].content;
     this.setState({article});
   }
 

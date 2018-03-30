@@ -22,4 +22,21 @@ firebase.initializeApp(CONFIG)
 
 const DB = firebase.database().ref('v-port')
 
+const getDataOnce = async (ref) => {
+  let refChild = DB.child(ref)
+
+  let data = await refChild.once('value')
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        return snapshot.val();
+      } else {
+        return false
+      }
+    })
+    .catch(err => { console.log(`getDataOnce error: ${err}`); return false;} )
+
+  return data;
+}
+
+export {getDataOnce, DB}
 export default {DB}
