@@ -6,7 +6,7 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "firebase": "^4.11.0",
-    "gatsby": "^1.9.17",
+    "gatsby": "^1.9.243",
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "google-maps-react": "^1.1.4",

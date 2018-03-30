@@ -35,7 +35,7 @@ const getDataOnce = async (ref) => {
     })
     .catch(err => { console.log(`getDataOnce error: ${err}`); return false;} )
 
-  return data;
+  return data
 }
 
 export {getDataOnce, DB}

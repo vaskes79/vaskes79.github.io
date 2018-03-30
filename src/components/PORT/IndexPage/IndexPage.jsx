@@ -61,7 +61,6 @@ class IndexPage extends Component {
   }
 
   handleOpenArticle = (articleId) => {
-    console.log(`article id: ${articleId}`);
     let article = this.state.portfolioItems.filter( item => item._id === articleId)[0].content;
     this.setState({article});
   }
