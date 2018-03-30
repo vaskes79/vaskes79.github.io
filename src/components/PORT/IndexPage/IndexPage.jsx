@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {uniqueId} from 'lodash'
+import 'babel-polyfill'
 // import db modules
 import {getDataOnce} from '../../../data/firebase'
 // import compones

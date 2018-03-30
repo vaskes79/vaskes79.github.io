@@ -22,8 +22,8 @@ firebase.initializeApp(CONFIG)
 
 const DB = firebase.database().ref('v-port')
 
-const getDataOnce = async (ref) => {
-  let refChild = DB.child(ref)
+async function getDataOnce(refName) {
+  let refChild = DB.child(refName)
 
   let data = await refChild.once('value')
     .then(snapshot => {
