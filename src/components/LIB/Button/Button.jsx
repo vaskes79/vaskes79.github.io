@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Button.css'
-
+/**
+ * The statless components for display button
+ *
+ * @param {string} text - isRequired props
+ */
 const Button = ({ size, color, bgColor, roundSize, text }) => {
 
   let styles = {
