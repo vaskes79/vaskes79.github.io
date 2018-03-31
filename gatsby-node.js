@@ -14,12 +14,15 @@ exports.modifyBabelrc = ({ babelrc }) => ({
 exports.onCreatePage = ({page, boundActionCreators}) => {
   const {createPage} = boundActionCreators
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     if (page.path.match(/^\/stylegide/)) {
       page.layout = 'stylegide'
       createPage(page)
+    } else if(page.path.match(/^\/projects\//)) {
+      page.layout = 'projects'
+      createPage(page)
     } else {
-      page.layout = 'index'
+      page.layout = 'default'
     }
     resolve()
   })
