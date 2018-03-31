@@ -24,7 +24,9 @@ const Button = ({ size, color, bgColor, roundSize, text }) => {
 }
 
 Button.propTypes = {
+  /** text for button */
   text: PropTypes.string.isRequired,
+  /** size button ['big' | 'small' | 'normal'] */
   size: PropTypes.string,
   color: PropTypes.string,
   bgColor: PropTypes.string,

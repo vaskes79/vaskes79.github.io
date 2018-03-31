@@ -7,5 +7,15 @@ module.exports = {
     title: `Vasily Guzov`,
     description: `web developer and frontend engienras`,
   },
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-react-docgen`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
+        path: `${__dirname}/src/components/`,
+      },
+    },
+  ],
 }

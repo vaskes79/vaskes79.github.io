@@ -3,6 +3,15 @@ import PropTypes from 'prop-types'
 import {uniqueId} from 'lodash'
 import './FilterPortfolio.css'
 
+/**
+ * The stateles component for filtering items
+ *
+ * @param {func} handleFilter
+ * @param {array} filters - array filter items
+ * @param {string} currentFilter - value current filter
+ * @param {boolean} isOpen - status menu
+ *
+ */
 const FilterPortfolio = ({handleFilter, filters, currentFilter, isOpen}) => {
   return (
     <div className={`FilterPortfolio ${isOpen ? 'FilterPortfolio--open':''}`}>

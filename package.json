@@ -11,6 +11,8 @@
     "gatsby": "^1.9.243",
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.5",
+    "gatsby-source-filesystem": "^1.5.27",
+    "gatsby-transformer-react-docgen": "^1.0.17",
     "google-maps-react": "^1.1.4",
     "lodash": "^4.17.5",
     "react-transition-group": "^2.3.0"
