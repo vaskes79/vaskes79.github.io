@@ -13,7 +13,7 @@
     "gatsby-plugin-react-helmet": "^1.0.5",
     "google-maps-react": "^1.1.4",
     "lodash": "^4.17.5",
-    "react-transition-group": "1.x"
+    "react-transition-group": "^2.3.0"
   },
   "keywords": [
     "gatsby"
