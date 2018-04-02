@@ -1,0 +1,19 @@
+.TestComponent {}
+
+.example-component {
+  background-color: yellow;
+  border: solid 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  opacity: 1.0;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+}
+.example-component.hide {
+  transition: height 500ms 500ms, opacity 500ms 0ms;
+  opacity: 0.0;
+  height: 0px;
+}

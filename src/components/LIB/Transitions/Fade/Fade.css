@@ -1,0 +1,22 @@
+.Fade {
+  opacity: 0;
+  max-height: 0;
+}
+.Fade.Fade--entering {
+  opacity: 0;
+  max-height: 0;
+}
+.Fade.Fade--entered {
+  opacity: 1;
+  max-height: 2000px;
+  transition: opacity 500ms 500ms, max-height 500ms;
+}
+.Fade--exiting {
+  opacity: 1;
+  max-height: 2000px;
+}
+.Fade.Fade--exited {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 500ms 0ms, max-height 500ms 500ms;
+}

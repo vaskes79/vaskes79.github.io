@@ -5,6 +5,7 @@ import 'babel-polyfill'
 import {getDataOnce} from '../../../data/firebase'
 // import compones
 import Preloader from '../Preloader'
+import {Fade} from '../../LIB/Transitions'
 import Resume from '../Resume'
 import {PortfolioArticle} from '../PortfolioItem'
 import Map from '../Map'
@@ -22,7 +23,7 @@ class IndexPage extends Component {
     filteredItems: [],
     filters: [],
     mapData: {},
-    resumeData: {},
+    resumeData: [],
     headerData: {},
     currentFilter: 'all',
     article: false,
@@ -115,7 +116,7 @@ class IndexPage extends Component {
     return (
       <div className="IndexPage">
         {loading    ? <Preloader /> : ''}
-        {openResume ? <Resume {...RESUME_PROPS} /> : '' }
+        <Resume {...RESUME_PROPS} isOpen={openResume} />
         {openMap    ? <Map {...MAP_PROPS} /> : ''}
         {article    ? <PortfolioArticle {...ARTICLE_PROPS} /> : '' }
 
