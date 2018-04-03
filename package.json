@@ -13,8 +13,9 @@
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-react-docgen": "^1.0.17",
-    "google-maps-react": "^1.1.4",
     "lodash": "^4.17.5",
+    "react-google-maps": "^9.4.5",
+    "react-icons": "^2.2.7",
     "react-transition-group": "^2.3.0"
   },
   "keywords": [
@@ -34,6 +35,7 @@
     "eslint": "^4.7.1",
     "eslint-plugin-react": "^7.3.0",
     "gh-pages": "^1.0.0",
+    "null-loader": "^0.1.1",
     "prettier": "^1.6.1",
     "react-docgen": "^2.20.1"
   }

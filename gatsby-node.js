@@ -11,6 +11,39 @@ exports.modifyBabelrc = ({ babelrc }) => ({
 })
 // end fix
 
+// https://www.gatsbyjs.org/docs/add-custom-webpack-config/
+// https://www.gatsbyjs.org/docs/add-custom-webpack-config/
+// https://github.com/gatsbyjs/gatsby/issues/484
+// https://www.gatsbyjs.org/docs/debugging-html-builds/
+// example how to modyfy webpack config when build
+// add setting externals
+// exports.modifyWebpackConfig = ({ config, stage }) => {
+//   if (stage === "build-html") {
+//     // console.log('##############################################################')
+//     // console.log('config not modify: ', JSON.stringify(config))
+//     // console.log('##############################################################')
+//     config.merge({
+//       externals: [
+//         {
+//           "window": "window"
+//         },
+//         {
+
+//           "document": "document"
+//         }
+//       ]
+//     })
+//     // console.log('##############################################################')
+//     // console.log('##############################################################')
+//     // console.log('config modify: ', JSON.stringify(config))
+//     // console.log('##############################################################')
+//     // console.log('##############################################################')
+//     return config
+//   }
+// }
+// end config
+
+
 exports.onCreatePage = ({page, boundActionCreators}) => {
   const {createPage} = boundActionCreators
 

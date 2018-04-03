@@ -1,33 +1,10 @@
-import React, {Component} from 'react'
-import ReactDom from 'react-dom'
+import React from 'react'
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 
-class MapContainer extends Component {
-  componentDidUpdate() {
-    this.loadMap()
-  }
-
-  loadMap = () => {
-    if(this.props && this.props.google) {
-      const {google} = this.props;
-      const maps = google.maps;
-
-      const mapRef = this.refs.map;
-      const node = ReactDom.findDOMNode(mapRef);
-
-      const mapConfig = Object.assign({}, this.props.coordinate)
-
-      this.map = new maps.Map(node, mapConfig);
-    }
-  }
-
-  render() {
-
-    return (
-      <div ref="map" className="FooterMap__mapWrap">
-        loading map...
-      </div>
-    )
-  }
-}
+const MapContainer = withGoogleMap((props) => (
+  <GoogleMap defaultZoom={props.zoom} defaultCenter={props.center}>
+    {props.isMarkerShown && <Marker position={props.center} />}
+  </GoogleMap>
+))
 
 export default MapContainer
