@@ -115,21 +115,17 @@ class IndexPage extends Component {
     }
     return (
       <div className="IndexPage">
-        {loading    ? <Preloader /> : ''}
-        <Resume {...RESUME_PROPS} isOpen={openResume} />
-        {openMap    ? <Map {...MAP_PROPS} /> : ''}
-        {article    ? <PortfolioArticle {...ARTICLE_PROPS} /> : '' }
-
-        {
-          loading || openResume || openMap || article ?
-            null
-          :
-            <div className="IndexPage__wrap">
-              <Header {...HEADE_PROPS} />
-              <Main {...MAIN_PROPS} />
-              <Footer {...FOOTER_DATA}/>
-            </div>
-        }
+        <Preloader isLoading={loading}/>
+        <Resume {...RESUME_PROPS} />
+        <Map {...MAP_PROPS} />
+        <PortfolioArticle {...ARTICLE_PROPS} />
+        <Fade in={!(loading||openResume||openMap||article)}>
+          <div className="IndexPage__wrap">
+            <Header {...HEADE_PROPS} />
+            <Main {...MAIN_PROPS} />
+            <Footer {...FOOTER_DATA}/>
+          </div>
+        </Fade>
       </div>
     )
   }

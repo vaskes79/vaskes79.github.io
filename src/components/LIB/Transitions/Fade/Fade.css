@@ -1,22 +1,16 @@
 .Fade {
   opacity: 0;
-  max-height: 0;
+  transition: opacity 500ms ease-in-out;
 }
-.Fade.Fade--entering {
+.Fade--entering {
   opacity: 0;
-  max-height: 0;
 }
-.Fade.Fade--entered {
+.Fade--entered {
   opacity: 1;
-  max-height: 2000px;
-  transition: opacity 500ms 500ms, max-height 500ms;
 }
 .Fade--exiting {
   opacity: 1;
-  max-height: 2000px;
 }
-.Fade.Fade--exited {
+.Fade--exited {
   opacity: 0;
-  max-height: 0;
-  transition: opacity 500ms 0ms, max-height 500ms 500ms;
 }

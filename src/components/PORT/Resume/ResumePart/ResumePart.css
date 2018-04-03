@@ -1,11 +1,12 @@
 .ResumePart {
   margin-top: 2.6em;
   flex-basis: 400px;
-  opacity: 0;
+  /* opacity: 0; */
+  opacity: 1;
 }
 
 .Resume--open .ResumePart {
-  animation: resumePartAppear 500ms ease-in 500ms forwards;
+  /* animation: resumePartAppear 500ms ease-in 500ms forwards; */
 }
 
 .ResumePart__partCategory {

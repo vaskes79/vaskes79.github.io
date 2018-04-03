@@ -27,9 +27,9 @@ const Header = ({title, subTitle, textIntro, handleOpenResume}) => {
 
 Header.propTypes = {
   handleOpenResume: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-  textIntro: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  textIntro: PropTypes.string,
 }
 
 export default Header

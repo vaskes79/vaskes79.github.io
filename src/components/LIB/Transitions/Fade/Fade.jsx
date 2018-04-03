@@ -4,12 +4,15 @@ import Transition from 'react-transition-group/Transition'
 import './Fade.css'
 
 const Fade = ({ in: inProp, children, duration}) => (
-  <Transition in={inProp} timeout={duration}>
-    {(status) => (
-      <div className={`Fade Fade--${status}`}>
-        {children}
-      </div>
-    )}
+  <Transition in={inProp} timeout={duration} unmountOnExit={true}>
+    {(status) => {
+      return (
+        <div
+          className={`Fade Fade--${status}`}>
+          {children}
+        </div>
+      )}
+    }
   </Transition>
 )
 
