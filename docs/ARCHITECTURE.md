@@ -106,4 +106,3 @@
 - GitHub Actions workflow автоматически собирает и деплоит проект
 - Статические файлы из `out/` деплоятся через GitHub Actions Pages API
 - Workflow файл: `.github/workflows/deploy.yml`
-
