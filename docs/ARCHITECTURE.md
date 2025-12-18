@@ -104,5 +104,5 @@
 
 - `basePath` в `next.config.ts` указывает на репозиторий GitHub Pages
 - GitHub Actions workflow автоматически собирает и деплоит проект
-- Статические файлы из `out/` загружаются в ветку `gh-pages`
-
+- Статические файлы из `out/` деплоятся через GitHub Actions Pages API
+- Workflow файл: `.github/workflows/deploy.yml`
