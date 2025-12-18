@@ -27,7 +27,7 @@ todos:
       - setup-nextjs
   - id: create-mdx-utils
     content: "Настроить MDX: @next/mdx или next-mdx-remote, утилиты для чтения MDX файлов с frontmatter"
-    status: pending
+    status: completed
     dependencies:
       - setup-nextjs
   - id: create-content-structure
