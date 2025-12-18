@@ -32,7 +32,7 @@ todos:
       - setup-nextjs
   - id: create-content-structure
     content: Создать структуру папок content/projects/[locale]/ и добавить примеры MDX файлов
-    status: pending
+    status: completed
     dependencies:
       - create-mdx-utils
   - id: create-dynamic-routes
