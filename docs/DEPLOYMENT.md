@@ -13,15 +13,28 @@
 2. Убедитесь, что в репозитории есть workflow файл:
    - `.github/workflows/deploy.yml`
 
+### Структура workflow
+
+Workflow состоит из двух джобов:
+- **build**: сборка проекта и создание артефакта
+- **deploy**: деплой артефакта на GitHub Pages
+
+Workflow использует официальные GitHub Actions:
+- `actions/checkout@v4` - получение кода
+- `actions/setup-node@v4` - настройка Node.js с кешированием
+- `actions/configure-pages@v4` - настройка GitHub Pages
+- `actions/upload-pages-artifact@v3` - загрузка артефакта
+- `actions/deploy-pages@v4` - деплой на GitHub Pages
+
 ### Процесс деплоя
 
-При каждом push в ветку `main` (или при создании Pull Request, если настроено):
+При каждом push в ветку `main` (или при ручном запуске через `workflow_dispatch`):
 
-1. GitHub Actions запускает workflow
-2. Устанавливаются зависимости (`npm install`)
+1. GitHub Actions запускает workflow "Deploy to GitHub Pages"
+2. Устанавливаются зависимости (`npm ci`)
 3. Выполняется сборка проекта (`npm run build`)
-4. Статические файлы из папки `out/` загружаются в ветку `gh-pages`
-5. GitHub Pages автоматически обновляет сайт
+4. Статические файлы из папки `out/` загружаются как артефакт
+5. GitHub Pages автоматически деплоит артефакт и обновляет сайт
 
 ### Проверка статуса деплоя
 
@@ -123,7 +136,8 @@ basePath: '/my-portfolio'
 
 - Проверьте настройку `basePath` в `next.config.ts`
 - Убедитесь, что файл `404.html` существует в папке `out/`
-- Проверьте, что GitHub Pages использует ветку `gh-pages`
+- Проверьте, что GitHub Pages использует источник `GitHub Actions` в настройках репозитория
+- Убедитесь, что workflow успешно завершился (проверьте вкладку `Actions`)
 
 ### Изображения не загружаются
 
@@ -144,17 +158,18 @@ basePath: '/my-portfolio'
 
 Если нужно откатиться к предыдущей версии:
 
-1. Перейдите в ветку `gh-pages`
-2. Найдите нужный коммит:
+1. Найдите нужный коммит в истории:
 ```bash
 git log --oneline
 ```
-3. Восстановите файлы:
+2. Откатите изменения в ветке `main`:
 ```bash
-git checkout <commit-hash> -- .
-git commit -m "Revert to previous version"
-git push origin gh-pages
+git revert <commit-hash>
+git push origin main
 ```
+3. GitHub Actions автоматически задеплоит предыдущую версию
+
+Альтернативно, можно перезапустить workflow из предыдущего успешного коммита через GitHub Actions UI.
 
 ## Окружения
 
