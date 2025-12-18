@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { defaultLocale, isValidLocale } from '@/i18n/config';
+import { defaultLocale } from '@/i18n/config';
+import { isValidLocale } from '@/lib/i18n';
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const pathnameHasLocale = pathname.split('/').some((segment) =>
     isValidLocale(segment)
