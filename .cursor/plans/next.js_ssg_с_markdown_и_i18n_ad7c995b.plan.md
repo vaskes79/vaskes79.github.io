@@ -42,11 +42,6 @@ todos:
       - create-i18n-system
       - create-mdx-utils
       - create-content-structure
-  - id: migrate-components
-    content: "Адаптировать существующие компоненты из Gatsby: заменить gatsby-link на next/link, добавить 'use client' где нужна интерактивность"
-    status: pending
-    dependencies:
-      - setup-nextjs
   - id: setup-gh-pages
     content: "Настроить деплой на GitHub Pages: GitHub Actions workflow для автоматической сборки и деплоя"
     status: pending
@@ -57,6 +52,5 @@ todos:
     status: completed
     dependencies:
       - setup-gh-pages
-      - migrate-components
 ---
 
