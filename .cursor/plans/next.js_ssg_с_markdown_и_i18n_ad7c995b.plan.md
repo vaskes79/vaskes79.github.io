@@ -17,7 +17,7 @@ todos:
       - setup-nextjs
   - id: create-theme-system
     content: "Создать систему тем: next-themes провайдер, интеграция с shadcn/ui темами, компонент переключателя"
-    status: pending
+    status: completed
     dependencies:
       - setup-shadcn
   - id: create-i18n-system
