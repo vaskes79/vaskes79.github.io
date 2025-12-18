@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import type { Metadata } from "next";
-import { getAllProjectSlugs, getProjectBySlug } from "@/lib/mdx";
+import { getAllProjectSlugs, getProjectBySlug, markdownToHtml } from "@/lib/mdx";
 import { locales, type Locale } from "@/i18n/config";
 import { isValidLocale } from "@/lib/i18n";
 
@@ -67,6 +66,8 @@ export default async function ProjectPage({
     notFound();
   }
 
+  const htmlContent = await markdownToHtml(project.content);
+
   return (
     <article className="container mx-auto px-4 py-8 max-w-4xl">
       <header className="mb-8">
@@ -99,9 +100,10 @@ export default async function ProjectPage({
           </div>
         )}
       </header>
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        <MDXRemote source={project.content} />
-      </div>
+      <div 
+        className="prose prose-lg dark:prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
     </article>
   );
 }

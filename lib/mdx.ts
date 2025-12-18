@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import type { Locale } from '@/i18n/config';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
 
 export interface ProjectFrontmatter {
   title: string;
@@ -96,5 +98,13 @@ export async function serializeMDX(
   return serialize(content, {
     parseFrontmatter: false, // frontmatter уже распарсен через gray-matter
   });
+}
+
+/**
+ * Конвертировать markdown в HTML (для статической генерации)
+ */
+export async function markdownToHtml(markdown: string): Promise<string> {
+  const result = await remark().use(remarkHtml).process(markdown);
+  return result.toString();
 }
 
