@@ -22,7 +22,7 @@ todos:
       - setup-shadcn
   - id: create-i18n-system
     content: "Создать систему i18n: middleware для определения языка, утилиты для переводов, файлы локализации (en.json, ru.json)"
-    status: pending
+    status: completed
     dependencies:
       - setup-nextjs
   - id: create-mdx-utils
