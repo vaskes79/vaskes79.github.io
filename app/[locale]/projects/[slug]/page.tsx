@@ -1,9 +1,9 @@
-import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import type { Metadata } from 'next';
-import { getAllProjectSlugs, getProjectBySlug } from '@/lib/mdx';
-import { locales, type Locale } from '@/i18n/config';
-import { isValidLocale } from '@/lib/i18n';
+import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import type { Metadata } from "next";
+import { getAllProjectSlugs, getProjectBySlug } from "@/lib/mdx";
+import { locales, type Locale } from "@/i18n/config";
+import { isValidLocale } from "@/lib/i18n";
 
 /**
  * Генерация всех статических путей для проектов
@@ -75,11 +75,14 @@ export default async function ProjectPage({
           {project.frontmatter.description}
         </p>
         {project.frontmatter.date && (
-          <time className="text-sm text-muted-foreground" dateTime={project.frontmatter.date}>
+          <time
+            className="text-sm text-muted-foreground"
+            dateTime={project.frontmatter.date}
+          >
             {new Date(project.frontmatter.date).toLocaleDateString(locale, {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
+              year: "numeric",
+              month: "long",
+              day: "numeric",
             })}
           </time>
         )}
@@ -102,4 +105,3 @@ export default async function ProjectPage({
     </article>
   );
 }
-
