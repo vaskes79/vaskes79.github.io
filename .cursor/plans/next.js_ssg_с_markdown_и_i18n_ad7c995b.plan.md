@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: setup-nextjs
     content: "Настроить Next.js 16 проект с App Router: next.config.ts с output: export, basePath для GitHub Pages, установить зависимости"
-    status: pending
+    status: completed
     dependencies:
       - cleanup-project
   - id: setup-shadcn
