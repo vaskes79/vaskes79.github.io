@@ -44,7 +44,7 @@ todos:
       - create-content-structure
   - id: setup-gh-pages
     content: "Настроить деплой на GitHub Pages: GitHub Actions workflow для автоматической сборки и деплоя"
-    status: pending
+    status: in_progress
     dependencies:
       - setup-nextjs
   - id: create-documentation
