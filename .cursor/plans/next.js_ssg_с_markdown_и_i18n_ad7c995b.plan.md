@@ -37,7 +37,7 @@ todos:
       - create-mdx-utils
   - id: create-dynamic-routes
     content: "Создать динамические роуты для проектов: app/[locale]/projects/[slug]/page.tsx с generateStaticParams"
-    status: pending
+    status: completed
     dependencies:
       - create-i18n-system
       - create-mdx-utils
