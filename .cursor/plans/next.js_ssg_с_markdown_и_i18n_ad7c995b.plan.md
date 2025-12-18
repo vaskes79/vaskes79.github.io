@@ -12,7 +12,7 @@ todos:
       - cleanup-project
   - id: setup-shadcn
     content: "Настроить shadcn/ui: установить Tailwind CSS, настроить components.json, установить необходимые компоненты shadcn"
-    status: pending
+    status: completed
     dependencies:
       - setup-nextjs
   - id: create-theme-system
