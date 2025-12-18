@@ -1,0 +1,32 @@
+---
+title: Video Notes
+description: Project for creating notes into video and exporting them in different formats (HTML, Markdown, text) with time position URLs.
+date: 2021-11-20
+tags:
+  - React
+  - Material-UI
+  - IndexedDB
+  - Netlify
+---
+
+Project for creating notes into video and export after that in different format (HTML, Markdown, text) markup. Exported notes include a URL with time position and description of a fragment video. All notes were stored into IndexedDB storage. In interface users could make CRUD operations with notes. I didn't save data in external storage, all data saved into user browser. If user clean data cache all data lost.
+
+## Technologies
+
+- **Frontend**: React with Material-UI components
+- **Storage**: IndexedDB for client-side data persistence
+- **Deployment**: Netlify for hosting
+- **Export Formats**: HTML, Markdown, Plain Text
+
+## Features
+
+- Create, read, update, and delete video notes
+- Export notes in multiple formats (HTML, Markdown, text)
+- Time-stamped video URLs for quick navigation
+- Client-side storage using IndexedDB
+- No external server dependencies
+
+## Key Implementation Details
+
+All data is stored locally in the user's browser using IndexedDB, providing a privacy-focused solution. The application allows users to annotate videos with time-stamped notes that can be exported for sharing or documentation purposes.
+
