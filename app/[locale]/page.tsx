@@ -36,15 +36,23 @@ export default async function HomePage({
     notFound();
   }
 
-  const projects = getAllProjects(locale);
+  const allProjects = getAllProjects(locale);
   const t = getTranslations(locale);
+
+  // Дедупликация проектов по slug
+  const projectsMap = new Map<string, (typeof allProjects)[0]>();
+  for (const project of allProjects) {
+    if (!projectsMap.has(project.slug)) {
+      projectsMap.set(project.slug, project);
+    }
+  }
+  const projects = Array.from(projectsMap.values());
 
   return (
     <div className="min-h-screen">
       {/* Header */}
       <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">{t.common.title}</h1>
+        <div className="container mx-auto px-4 py-4 flex justify-end items-center">
           <div className="flex items-center gap-4">
             {/* Language Switcher */}
             <div className="flex gap-2">
@@ -78,7 +86,7 @@ export default async function HomePage({
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold mb-4">{t.nav.projects}</h2>
+            <h1 className="text-4xl font-bold mb-4">{t.common.title}</h1>
             <p className="text-xl text-muted-foreground">
               {t.common.description}
             </p>
