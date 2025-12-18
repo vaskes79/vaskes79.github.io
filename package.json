@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run optimize-images && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize-images": "tsx lib/optimize-images.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -26,8 +27,10 @@
     "@types/react-dom": "^18.3.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.0.0",
+    "sharp": "^0.33.0",
     "tailwindcss": "^4.1.18",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.7.0",
     "typescript": "^5.5.0"
   }
 }
